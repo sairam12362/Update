@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="kombai-design-canvas" content="true">
+  
+  
+  
+  <script src="https://unpkg.com/@tailwindcss/browser@4.3.3/dist/index.global.js" integrity="sha384-2ql948lIdLcGEE0/qxNiudyTjgauA3RDJERu5xW75kFCvSl5a9odyQYCb6tEjnmB" crossorigin="anonymous"></script>
+  
+  <style>html, body { margin: 0; padding: 0; } #root { display: contents; }</style>
+</head><body>
+  <div id="root"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700&display=swap');
+  body { background: #1D1314; font-family: 'Encode Sans', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+</style>
+<link data-kid="1" data-name="tabler icons webfont stylesheet link" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.48.0/dist/tabler-icons.min.css" rel="stylesheet"/>
+<div class="flex min-h-screen items-stretch" data-kid="2" data-name="page layout container">
+<aside class="w-[208px] shrink-0 flex flex-col px-4 py-5 border-r border-[#FFBF00]/15" data-kid="2-1" data-name="spectral dashboard sidebar">
+<div class="pb-4 border-b border-[#FFBF00]/15" data-dynamic="true" data-kid="2-1-1" data-name="sidebar header with project title" data-reason="false">
+<div class="text-[13px] font-semibold leading-[1.35] text-[#FFBF00]" data-kid="2-1-1-1" data-name="project title text">Spectrum Allocation Benchmark</div>
+<div class="mt-3 flex items-center gap-2" data-kid="2-1-1-2" data-name="status indicator row">
+<span class="w-1.5 h-1.5 bg-[#32936F]" data-kid="2-1-1-2-1" data-name="connected status dot"></span>
+<span class="text-[11px] tnum text-[#FFBF00]/60" data-kid="2-1-1-2-2" data-name="status label text">policy.pt loaded</span>
+</div>
+</div>
+<nav class="mt-4 flex flex-col" data-kid="2-1-2" data-name="sidebar main navigation">
+<a class="h-9 flex items-center px-3 text-[13px] font-medium bg-[#2274A5] text-white" data-kid="2-1-2-1" data-name="active navigation link (Overview)">Overview</a>
+<a class="h-9 flex items-center px-3 text-[13px] text-[#FFBF00]/60" data-kid="2-1-2-2" data-name="navigation link (Live Simulation)">Live Simulation</a>
+<a class="h-9 flex items-center px-3 text-[13px] text-[#FFBF00]/60" data-kid="2-1-2-3" data-name="navigation link (Predictor)">Predictor</a>
+<a class="h-9 flex items-center px-3 text-[13px] text-[#FFBF00]/60" data-kid="2-1-2-4" data-name="navigation link (Ablation)">Ablation</a>
+<a class="h-9 flex items-center px-3 text-[13px] text-[#FFBF00]/60" data-kid="2-1-2-5" data-name="navigation link (Methodology)">Methodology</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-[#FFBF00]/15" data-kid="2-1-3" data-name="sidebar footer source list">
+<div class="text-[11px] text-[#FFBF00]/60" data-kid="2-1-3-1" data-name="figure sources section label">Figure sources</div>
+<div class="mt-2 text-[11px] tnum leading-[1.7] text-[#FFBF00]/70" data-kid="2-1-3-2" data-name="source file list container">
+<div data-kid="2-1-3-2-1" data-name="source file path (headline.csv)">results/headline.csv</div>
+<div data-kid="2-1-3-2-2" data-name="source file path (kpi_by_regime.csv)">results/kpi_by_regime.csv</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 min-w-0 flex flex-col" data-kid="2-2" data-name="main content area">
+<div class="h-14 shrink-0 flex items-center justify-between gap-6 px-5 border-b border-[#FFBF00]/15" data-kid="2-2-1" data-name="top toolbar header">
+<div class="text-[13px] font-semibold text-[#FFBF00]" data-kid="2-2-1-1" data-name="toolbar page title">Intelligent Spectrum Allocation</div>
+<div class="flex items-center gap-3 text-[11px]" data-kid="2-2-1-2" data-name="parameter values summary row">
+<div class="flex items-baseline gap-1.5" data-kid="2-2-1-2-1" data-name="carrier parameter display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-1-2-1-1" data-name="carrier parameter label">Carrier</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-1-2-1-2" data-name="carrier parameter value">3.5 GHz</span></div>
+<span class="w-px h-3 bg-[#FFBF00]/20" data-kid="2-2-1-2-2" data-name="vertical parameter separator"></span>
+<div class="flex items-baseline gap-1.5" data-kid="2-2-1-2-3" data-name="bandwidth parameter display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-1-2-3-1" data-name="bandwidth parameter label">Bandwidth</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-1-2-3-2" data-name="bandwidth parameter value">100 MHz</span></div>
+<span class="w-px h-3 bg-[#FFBF00]/20" data-kid="2-2-1-2-4" data-name="vertical parameter separator"></span>
+<div class="flex items-baseline gap-1.5" data-kid="2-2-1-2-5" data-name="RBG parameter display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-1-2-5-1" data-name="RBG parameter label">RBG</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-1-2-5-2" data-name="RBG parameter value">18</span></div>
+<span class="w-px h-3 bg-[#FFBF00]/20" data-kid="2-2-1-2-6" data-name="vertical parameter separator"></span>
+<div class="flex items-baseline gap-1.5" data-kid="2-2-1-2-7" data-name="slot parameter display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-1-2-7-1" data-name="slot parameter label">Slot</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-1-2-7-2" data-name="slot parameter value">0.5 ms</span></div>
+</div>
+</div>
+<div class="h-12 shrink-0 flex items-center gap-4 px-5 border-b border-[#FFBF00]/15" data-kid="2-2-2" data-name="filter and range toolbar">
+<div class="flex items-center gap-2" data-kid="2-2-2-1" data-name="regime filter label with icon">
+<span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-2-1-1" data-name="filter label icon container"><i class="ti ti-filter" data-kid="2-2-2-1-1-1" data-name="filter funnel icon"></i></span>
+<span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-2-1-2" data-name="regime filter label text">Regime</span>
+</div>
+<div class="flex border border-[#FFBF00]/20" data-kid="2-2-2-2" data-name="regime filter segmented button group">
+<button class="h-9 px-3 text-[12px] font-medium text-[#FFBF00]" data-kid="2-2-2-2-1" data-name="active regime filter button (All regimes)" style="background:#241819; box-shadow: inset 0 0 0 1px rgba(255,191,0,0.35);">All regimes</button>
+<button class="h-9 px-3 text-[12px] text-[#FFBF00]/60 border-l border-[#FFBF00]/15" data-kid="2-2-2-2-2" data-name="regime filter button (Low)">Low</button>
+<button class="h-9 px-3 text-[12px] text-[#FFBF00]/60 border-l border-[#FFBF00]/15" data-kid="2-2-2-2-3" data-name="regime filter button (Medium)">Medium</button>
+<button class="h-9 px-3 text-[12px] text-[#FFBF00]/60 border-l border-[#FFBF00]/15" data-kid="2-2-2-2-4" data-name="regime filter button (High)">High</button>
+<button class="h-9 px-3 text-[12px] text-[#FFBF00]/60 border-l border-[#FFBF00]/15" data-kid="2-2-2-2-5" data-name="regime filter button (Peak)">Peak</button>
+</div>
+<div class="ml-auto flex items-center gap-4 text-[11px]" data-kid="2-2-2-3" data-name="range values summary row">
+<div class="flex items-baseline gap-1.5" data-kid="2-2-2-3-1" data-name="UEs range display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-2-3-1-1" data-name="UEs range label">UEs</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-2-3-1-2" data-name="UEs range value">20–80</span></div>
+<span class="w-px h-3 bg-[#FFBF00]/20" data-kid="2-2-2-3-2" data-name="vertical parameter separator"></span>
+<div class="flex items-baseline gap-1.5" data-kid="2-2-2-3-3" data-name="Load range display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-2-3-3-1" data-name="Load range label">Load</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-2-3-3-2" data-name="Load range value">×0.55–2.30</span></div>
+<span class="w-px h-3 bg-[#FFBF00]/20" data-kid="2-2-2-3-4" data-name="vertical parameter separator"></span>
+<div class="flex items-baseline gap-1.5" data-kid="2-2-2-3-5" data-name="Incumbent duty range display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-2-3-5-1" data-name="Incumbent duty range label">Incumbent duty</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-2-3-5-2" data-name="Incumbent duty range value">12–46%</span></div>
+<span class="w-px h-3 bg-[#FFBF00]/20" data-kid="2-2-2-3-6" data-name="vertical parameter separator"></span>
+<div class="flex items-baseline gap-1.5" data-kid="2-2-2-3-7" data-name="seeds range display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-2-3-7-1" data-name="seeds range label">Seeds</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-2-3-7-2" data-name="seeds range value">8</span></div>
+<span class="w-px h-3 bg-[#FFBF00]/20" data-kid="2-2-2-3-8" data-name="vertical parameter separator"></span>
+<div class="flex items-baseline gap-1.5" data-kid="2-2-2-3-9" data-name="slots range display pair"><span class="text-[#FFBF00]/60" data-kid="2-2-2-3-9-1" data-name="slots range label">Slots</span><span class="tnum text-[#FFBF00]/90" data-kid="2-2-2-3-9-2" data-name="slots range value">1000</span></div>
+</div>
+</div>
+<div class="px-5 pt-4 pb-5 flex flex-col" data-kid="2-2-3" data-name="main content scrollable body">
+<div class="min-h-[104px] grid grid-cols-[1.55fr_1fr]" data-kid="2-2-3-1" data-name="results summary summary grid">
+<div class="pr-6 flex flex-col justify-start gap-2" data-kid="2-2-3-1-1" data-name="primary summary column">
+<div class="text-[13px] leading-[1.55] text-[#FFBF00]/84 max-w-[680px]" data-kid="2-2-3-1-1-1" data-name="primary summary finding text">Harmful interference to the incumbent falls 42–69% in every congestion regime, and wasted idle spectrum falls 68–84% at medium load and above. Paired Wilcoxon p &lt; 0.05 in each case.</div>
+<div class="text-[13px] font-semibold text-[#FFBF00]" data-kid="2-2-3-1-1-2" data-name="best allocator highlight text">Strongest allocator overall: M-LWDF + learned sensing.</div>
+</div>
+<div class="pl-6 border-l border-[#FFBF00]/15 flex flex-col justify-start gap-2" data-kid="2-2-3-1-2" data-name="secondary summary column">
+<div class="text-[13px] leading-[1.55] text-[#FFBF00]/84" data-kid="2-2-3-1-2-1" data-name="QoS finding text">QoS satisfaction is not significantly better than the best classical scheduler in any congestion regime (p ≥ 0.05).</div>
+<div class="text-[13px] leading-[1.55] text-[#FFBF00]/84" data-kid="2-2-3-1-2-2" data-name="Goodput/fairness finding text">Goodput, p99 delay and Jain fairness are lower than the best classical scheduler at high and peak load.</div>
+</div>
+</div>
+<section class="mt-4" data-kid="2-2-3-2" data-name="comparison table section">
+<div class="h-10 flex items-center justify-between gap-6" data-kid="2-2-3-2-1" data-name="table section header row">
+<h2 class="text-[15px] font-semibold text-[#FFBF00]/90" data-kid="2-2-3-2-1-1" data-name="table section headline">Direction-adjusted change against best classical scheduler</h2>
+<div class="flex items-center gap-4 text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-1-2" data-name="table legend bar">
+<span class="flex items-center gap-1.5" data-kid="2-2-3-2-1-2-1" data-name="favourable legend item"><span class="w-2 h-2 bg-[#32936F]" data-kid="2-2-3-2-1-2-1-1" data-name="favourable swatch square"></span>Favourable</span>
+<span class="flex items-center gap-1.5" data-kid="2-2-3-2-1-2-2" data-name="unfavourable legend item"><span class="w-2 h-2 bg-[#E83F6F]" data-kid="2-2-3-2-1-2-2-1" data-name="unfavourable swatch square"></span>Unfavourable</span>
+<span class="tnum" data-kid="2-2-3-2-1-2-3" data-name="n.s. legend notation">n.s. = paired Wilcoxon p ≥ 0.05</span>
+</div>
+</div>
+<div class="overflow-x-auto" data-kid="2-2-3-2-2" data-name="table horizontal scroll container">
+<table class="w-full min-w-[1000px] table-fixed border-collapse" data-kid="2-2-3-2-2-1" data-name="KPI comparison table">
+<colgroup data-kid="2-2-3-2-2-1-1" data-name="table column width definitions">
+<col data-kid="2-2-3-2-2-1-1-1" data-name="column width for category" style="width:8%"/>
+<col data-kid="2-2-3-2-2-1-1-2" data-name="column width for metric" style="width:23%"/>
+<col data-kid="2-2-3-2-2-1-1-3" data-name="column width for Better direction" style="width:6%"/>
+<col data-kid="2-2-3-2-2-1-1-4" data-name="column width for low regime" style="width:15.75%"/>
+<col data-kid="2-2-3-2-2-1-1-5" data-name="column width for medium regime" style="width:15.75%"/>
+<col data-kid="2-2-3-2-2-1-1-6" data-name="column width for high regime" style="width:15.75%"/>
+<col data-kid="2-2-3-2-2-1-1-7" data-name="column width for peak regime" style="width:15.75%"/>
+</colgroup>
+<thead data-kid="2-2-3-2-2-1-2" data-name="table header row">
+<tr class="h-8 border-y border-[#FFBF00]/20 text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-2-1" data-name="header row container">
+<th data-kid="2-2-3-2-2-1-2-1-1" data-name="empty category header cell"></th>
+<th class="pl-3 text-left font-medium" data-kid="2-2-3-2-2-1-2-1-2" data-name="metric column header">Metric</th>
+<th class="text-center font-medium" data-kid="2-2-3-2-2-1-2-1-3" data-name="better column header">Better</th>
+<th class="pr-4 text-right font-medium leading-none" data-kid="2-2-3-2-2-1-2-1-4" data-name="low regime column header">low<div class="mt-1 text-[10px] font-normal text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-2-1-4-1" data-name="low regime UEs sub-header">20 UEs</div></th>
+<th class="pr-4 text-right font-medium leading-none" data-kid="2-2-3-2-2-1-2-1-5" data-name="medium regime column header">medium<div class="mt-1 text-[10px] font-normal text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-2-1-5-1" data-name="medium regime UEs sub-header">35 UEs</div></th>
+<th class="pr-4 text-right font-medium leading-none" data-kid="2-2-3-2-2-1-2-1-6" data-name="high regime column header">high<div class="mt-1 text-[10px] font-normal text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-2-1-6-1" data-name="high regime UEs sub-header">55 UEs</div></th>
+<th class="pr-4 text-right font-medium leading-none" data-kid="2-2-3-2-2-1-2-1-7" data-name="peak regime column header">peak<div class="mt-1 text-[10px] font-normal text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-2-1-7-1" data-name="peak regime UEs sub-header">80 UEs</div></th>
+</tr>
+</thead>
+<tbody class="text-[13px]" data-kid="2-2-3-2-2-1-3" data-name="table body rows">
+<tr class="h-9 border-b border-[#FFBF00]/10" data-kid="2-2-3-2-2-1-3-1" data-name="QoS satisfaction data row">
+<td class="align-top pr-3 pt-[11px] text-[15px] font-medium text-[#FFBF00]/55 border-r border-[#FFBF00]/15" data-kid="2-2-3-2-2-1-3-1-1" data-name="Service category row-span label" rowspan="5">Service</td>
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-1-2" data-name="QoS satisfaction metric label">QoS satisfaction <span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-2-1" data-name="QoS satisfaction unit">%</span></td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-1-3" data-name="QoS better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-3-1" data-name="QoS better-direction icon wrapper"><i aria-label="Higher is better" class="ti ti-arrow-up" data-kid="2-2-3-2-2-1-3-1-3-1-1" data-name="higher-is-better arrow-up icon" title="Higher is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-1-4" data-name="QoS low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-1-4-1" data-name="QoS low-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-4-1-1" data-name="QoS low-regime delta value">−1.9</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-4-1-2" data-name="QoS low-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-1-5" data-name="QoS medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-1-5-1" data-name="QoS medium-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-5-1-1" data-name="QoS medium-regime delta value">−26.6</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-5-1-2" data-name="QoS medium-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-1-6" data-name="QoS high-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-1-6-1" data-name="QoS high-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-6-1-1" data-name="QoS high-regime delta value">−3.3</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-6-1-2" data-name="QoS high-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-1-7" data-name="QoS peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-1-7-1" data-name="QoS peak-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-7-1-1" data-name="QoS peak-regime delta value">+3.3</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-1-7-1-2" data-name="QoS peak-regime n.s. marker">n.s.</span></div></td>
+</tr>
+<tr class="h-9 border-b border-[#FFBF00]/10" data-kid="2-2-3-2-2-1-3-2" data-name="Goodput data row">
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-2-1" data-name="Goodput metric label">Goodput <span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-2-1-1" data-name="Goodput unit">Mb/s</span></td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-2-2" data-name="Goodput better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-2-2-1" data-name="Goodput better-direction icon wrapper"><i aria-label="Higher is better" class="ti ti-arrow-up" data-kid="2-2-3-2-2-1-3-2-2-1-1" data-name="higher-is-better arrow-up icon" title="Higher is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-2-3" data-name="Goodput low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-2-3-1" data-name="Goodput low-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-2-3-1-1" data-name="Goodput low-regime delta value">−0.1</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-2-3-1-2" data-name="Goodput low-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-2-4" data-name="Goodput medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-2-4-1" data-name="Goodput medium-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-2-4-1-1" data-name="Goodput medium-regime delta value">+5.7</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-2-4-1-2" data-name="Goodput medium-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-2-4-1-2-1" data-name="Goodput medium-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-2-5" data-name="Goodput high-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-2-5-1" data-name="Goodput high-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-2-5-1-1" data-name="Goodput high-regime delta value">−14.6</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-2-5-1-2" data-name="Goodput high-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-2-5-1-2-1" data-name="Goodput high-regime unfavourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-2-6" data-name="Goodput peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-2-6-1" data-name="Goodput peak-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-2-6-1-1" data-name="Goodput peak-regime delta value">−21.5</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-2-6-1-2" data-name="Goodput peak-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-2-6-1-2-1" data-name="Goodput peak-regime unfavourable dot"></span></span></div></td>
+</tr>
+<tr class="h-9 border-b border-[#FFBF00]/10" data-kid="2-2-3-2-2-1-3-3" data-name="Spectral efficiency data row">
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-3-1" data-name="Spectral efficiency metric label">Spectral efficiency <span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-3-1-1" data-name="Spectral efficiency unit">b/s/Hz</span></td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-3-2" data-name="Spectral efficiency better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-3-2-1" data-name="Spectral efficiency better-direction icon wrapper"><i aria-label="Higher is better" class="ti ti-arrow-up" data-kid="2-2-3-2-2-1-3-3-2-1-1" data-name="higher-is-better arrow-up icon" title="Higher is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-3-3" data-name="Spectral efficiency low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-3-3-1" data-name="Spectral efficiency low-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-3-3-1-1" data-name="Spectral efficiency low-regime delta value">−0.1</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-3-3-1-2" data-name="Spectral efficiency low-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-3-4" data-name="Spectral efficiency medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-3-4-1" data-name="Spectral efficiency medium-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-3-4-1-1" data-name="Spectral efficiency medium-regime delta value">+5.7</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-3-4-1-2" data-name="Spectral efficiency medium-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-3-4-1-2-1" data-name="Spectral efficiency medium-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-3-5" data-name="Spectral efficiency high-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-3-5-1" data-name="Spectral efficiency high-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-3-5-1-1" data-name="Spectral efficiency high-regime delta value">−14.6</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-3-5-1-2" data-name="Spectral efficiency high-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-3-5-1-2-1" data-name="Spectral efficiency high-regime unfavourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-3-6" data-name="Spectral efficiency peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-3-6-1" data-name="Spectral efficiency peak-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-3-6-1-1" data-name="Spectral efficiency peak-regime delta value">−21.5</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-3-6-1-2" data-name="Spectral efficiency peak-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-3-6-1-2-1" data-name="Spectral efficiency peak-regime unfavourable dot"></span></span></div></td>
+</tr>
+<tr class="h-9 border-b border-[#FFBF00]/10" data-kid="2-2-3-2-2-1-3-4" data-name="p99 delay data row">
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-4-1" data-name="p99 delay metric label">p99 delay <span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-4-1-1" data-name="p99 delay unit">ms</span></td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-4-2" data-name="p99 delay better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-4-2-1" data-name="p99 delay better-direction icon wrapper"><i aria-label="Lower is better" class="ti ti-arrow-down" data-kid="2-2-3-2-2-1-3-4-2-1-1" data-name="lower-is-better arrow-down icon" title="Lower is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-4-3" data-name="p99 delay low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-4-3-1" data-name="p99 delay low-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-4-3-1-1" data-name="p99 delay low-regime delta value">−21.6</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-4-3-1-2" data-name="p99 delay low-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-4-4" data-name="p99 delay medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-4-4-1" data-name="p99 delay medium-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-4-4-1-1" data-name="p99 delay medium-regime delta value">+12.0</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-4-4-1-2" data-name="p99 delay medium-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-4-5" data-name="p99 delay high-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-4-5-1" data-name="p99 delay high-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-4-5-1-1" data-name="p99 delay high-regime delta value">−23.7</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-4-5-1-2" data-name="p99 delay high-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-4-5-1-2-1" data-name="p99 delay high-regime unfavourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-4-6" data-name="p99 delay peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-4-6-1" data-name="p99 delay peak-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-4-6-1-1" data-name="p99 delay peak-regime delta value">−18.1</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-4-6-1-2" data-name="p99 delay peak-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-4-6-1-2-1" data-name="p99 delay peak-regime unfavourable dot"></span></span></div></td>
+</tr>
+<tr class="h-9 border-b border-[#FFBF00]/10" data-kid="2-2-3-2-2-1-3-5" data-name="Deadline misses data row">
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-5-1" data-name="Deadline misses metric label">Deadline misses <span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-5-1-1" data-name="Deadline misses unit">%</span></td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-5-2" data-name="Deadline misses better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-5-2-1" data-name="Deadline misses better-direction icon wrapper"><i aria-label="Lower is better" class="ti ti-arrow-down" data-kid="2-2-3-2-2-1-3-5-2-1-1" data-name="lower-is-better arrow-down icon" title="Lower is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-5-3" data-name="Deadline misses low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-5-3-1" data-name="Deadline misses low-regime value pair"><span class="tnum text-[#FFBF00]/35" data-kid="2-2-3-2-2-1-3-5-3-1-1" data-name="Deadline misses low-regime empty placeholder">—</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-5-3-1-2" data-name="Deadline misses low-regime empty indicator slot"></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-5-4" data-name="Deadline misses medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-5-4-1" data-name="Deadline misses medium-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-5-4-1-1" data-name="Deadline misses medium-regime delta value">+70.4</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-5-4-1-2" data-name="Deadline misses medium-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-5-5" data-name="Deadline misses high-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-5-5-1" data-name="Deadline misses high-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-5-5-1-1" data-name="Deadline misses high-regime delta value">+6.8</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-5-5-1-2" data-name="Deadline misses high-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-5-5-1-2-1" data-name="Deadline misses high-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-5-6" data-name="Deadline misses peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-5-6-1" data-name="Deadline misses peak-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-5-6-1-1" data-name="Deadline misses peak-regime delta value">+6.0</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-5-6-1-2" data-name="Deadline misses peak-regime n.s. marker">n.s.</span></div></td>
+</tr>
+<tr class="h-9 border-y border-[#FFBF00]/25" data-kid="2-2-3-2-2-1-3-6" data-name="Incumbent collisions data row">
+<td class="align-top pr-3 pt-[11px] text-[15px] font-medium text-[#FFBF00]/55 border-r border-[#FFBF00]/15" data-kid="2-2-3-2-2-1-3-6-1" data-name="Sharing category row-span label" rowspan="2">Sharing</td>
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-6-2" data-name="Incumbent collisions metric label">Incumbent collisions <span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-6-2-1" data-name="Incumbent collisions unit">%</span></td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-6-3" data-name="Incumbent collisions better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-6-3-1" data-name="Incumbent collisions better-direction icon wrapper"><i aria-label="Lower is better" class="ti ti-arrow-down" data-kid="2-2-3-2-2-1-3-6-3-1-1" data-name="lower-is-better arrow-down icon" title="Lower is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-6-4" data-name="Incumbent collisions low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-6-4-1" data-name="Incumbent collisions low-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-6-4-1-1" data-name="Incumbent collisions low-regime delta value">+44.8</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-6-4-1-2" data-name="Incumbent collisions low-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-6-4-1-2-1" data-name="Incumbent collisions low-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-6-5" data-name="Incumbent collisions medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-6-5-1" data-name="Incumbent collisions medium-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-6-5-1-1" data-name="Incumbent collisions medium-regime delta value">+42.4</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-6-5-1-2" data-name="Incumbent collisions medium-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-6-5-1-2-1" data-name="Incumbent collisions medium-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-6-6" data-name="selected Incumbent collisions high-regime value cell" style="box-shadow: inset 0 0 0 1px rgba(255,191,0,0.5);"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-6-6-1" data-name="Incumbent collisions high-regime value pair (highlighted)"><span class="tnum text-[#FFBF00]" data-kid="2-2-3-2-2-1-3-6-6-1-1" data-name="Incumbent collisions high-regime delta value (highlighted)">+44.1</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-6-6-1-2" data-name="Incumbent collisions high-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-6-6-1-2-1" data-name="Incumbent collisions high-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-6-7" data-name="Incumbent collisions peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-6-7-1" data-name="Incumbent collisions peak-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-6-7-1-1" data-name="Incumbent collisions peak-regime delta value">+69.5</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-6-7-1-2" data-name="Incumbent collisions peak-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-6-7-1-2-1" data-name="Incumbent collisions peak-regime favourable dot"></span></span></div></td>
+</tr>
+<tr class="h-9 border-b border-[#FFBF00]/10" data-kid="2-2-3-2-2-1-3-7" data-name="Wasted vacancy data row">
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-7-1" data-name="Wasted vacancy metric label">Wasted vacancy <span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-7-1-1" data-name="Wasted vacancy unit">%</span></td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-7-2" data-name="Wasted vacancy better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-7-2-1" data-name="Wasted vacancy better-direction icon wrapper"><i aria-label="Lower is better" class="ti ti-arrow-down" data-kid="2-2-3-2-2-1-3-7-2-1-1" data-name="lower-is-better arrow-down icon" title="Lower is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-7-3" data-name="Wasted vacancy low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-7-3-1" data-name="Wasted vacancy low-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-7-3-1-1" data-name="Wasted vacancy low-regime delta value">−70.4</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-7-3-1-2" data-name="Wasted vacancy low-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-7-3-1-2-1" data-name="Wasted vacancy low-regime unfavourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-7-4" data-name="Wasted vacancy medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-7-4-1" data-name="Wasted vacancy medium-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-7-4-1-1" data-name="Wasted vacancy medium-regime delta value">+83.7</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-7-4-1-2" data-name="Wasted vacancy medium-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-7-4-1-2-1" data-name="Wasted vacancy medium-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-7-5" data-name="Wasted vacancy high-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-7-5-1" data-name="Wasted vacancy high-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-7-5-1-1" data-name="Wasted vacancy high-regime delta value">+84.0</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-7-5-1-2" data-name="Wasted vacancy high-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-7-5-1-2-1" data-name="Wasted vacancy high-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-7-6" data-name="Wasted vacancy peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-7-6-1" data-name="Wasted vacancy peak-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-7-6-1-1" data-name="Wasted vacancy peak-regime delta value">+68.1</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-7-6-1-2" data-name="Wasted vacancy peak-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-7-6-1-2-1" data-name="Wasted vacancy peak-regime favourable dot"></span></span></div></td>
+</tr>
+<tr class="h-9 border-t border-[#FFBF00]/25 border-b border-[#FFBF00]/10" data-kid="2-2-3-2-2-1-3-8" data-name="Jain fairness data row">
+<td class="align-top pr-3 pt-[11px] text-[15px] font-medium text-[#FFBF00]/55 border-r border-[#FFBF00]/15" data-kid="2-2-3-2-2-1-3-8-1" data-name="Service category row-span label (repeated)" rowspan="2">Service</td>
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-8-2" data-name="Jain fairness metric label">Jain fairness</td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-8-3" data-name="Jain fairness better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-8-3-1" data-name="Jain fairness better-direction icon wrapper"><i aria-label="Higher is better" class="ti ti-arrow-up" data-kid="2-2-3-2-2-1-3-8-3-1-1" data-name="higher-is-better arrow-up icon" title="Higher is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-8-4" data-name="Jain fairness low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-8-4-1" data-name="Jain fairness low-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-8-4-1-1" data-name="Jain fairness low-regime delta value">−6.0</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-8-4-1-2" data-name="Jain fairness low-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-8-5" data-name="Jain fairness medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-8-5-1" data-name="Jain fairness medium-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-8-5-1-1" data-name="Jain fairness medium-regime delta value">−6.1</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-8-5-1-2" data-name="Jain fairness medium-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-8-5-1-2-1" data-name="Jain fairness medium-regime unfavourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-8-6" data-name="Jain fairness high-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-8-6-1" data-name="Jain fairness high-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-8-6-1-1" data-name="Jain fairness high-regime delta value">−8.3</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-8-6-1-2" data-name="Jain fairness high-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-8-6-1-2-1" data-name="Jain fairness high-regime unfavourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-8-7" data-name="Jain fairness peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-8-7-1" data-name="Jain fairness peak-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-8-7-1-1" data-name="Jain fairness peak-regime delta value">−8.4</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-8-7-1-2" data-name="Jain fairness peak-regime indicator container"><span class="inline-block w-2 h-2 bg-[#E83F6F] align-middle" data-kid="2-2-3-2-2-1-3-8-7-1-2-1" data-name="Jain fairness peak-regime unfavourable dot"></span></span></div></td>
+</tr>
+<tr class="h-9 border-b border-[#FFBF00]/15" data-kid="2-2-3-2-2-1-3-9" data-name="Allocation waste data row">
+<td class="pl-3 text-[#FFBF00]/84" data-kid="2-2-3-2-2-1-3-9-1" data-name="Allocation waste metric label">Allocation waste <span class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-9-1-1" data-name="Allocation waste unit">%</span></td>
+<td class="text-center" data-kid="2-2-3-2-2-1-3-9-2" data-name="Allocation waste better-direction cell"><span class="text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-9-2-1" data-name="Allocation waste better-direction icon wrapper"><i aria-label="Lower is better" class="ti ti-arrow-down" data-kid="2-2-3-2-2-1-3-9-2-1-1" data-name="lower-is-better arrow-down icon" title="Lower is better"></i></span></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-9-3" data-name="Allocation waste low-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-9-3-1" data-name="Allocation waste low-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-9-3-1-1" data-name="Allocation waste low-regime delta value">−4.5</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-9-3-1-2" data-name="Allocation waste low-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-9-4" data-name="Allocation waste medium-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-9-4-1" data-name="Allocation waste medium-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-9-4-1-1" data-name="Allocation waste medium-regime delta value">+0.8</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-9-4-1-2" data-name="Allocation waste medium-regime n.s. marker">n.s.</span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-9-5" data-name="Allocation waste high-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-9-5-1" data-name="Allocation waste high-regime value pair"><span class="tnum text-[#FFBF00]/90" data-kid="2-2-3-2-2-1-3-9-5-1-1" data-name="Allocation waste high-regime delta value">+7.3</span><span class="w-[30px] shrink-0" data-kid="2-2-3-2-2-1-3-9-5-1-2" data-name="Allocation waste high-regime indicator container"><span class="inline-block w-2 h-2 bg-[#32936F] align-middle" data-kid="2-2-3-2-2-1-3-9-5-1-2-1" data-name="Allocation waste high-regime favourable dot"></span></span></div></td>
+<td class="pr-4" data-kid="2-2-3-2-2-1-3-9-6" data-name="Allocation waste peak-regime value cell"><div class="flex items-baseline justify-end gap-2" data-kid="2-2-3-2-2-1-3-9-6-1" data-name="Allocation waste peak-regime value pair"><span class="tnum text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-9-6-1-1" data-name="Allocation waste peak-regime delta value">+0.2</span><span class="w-[30px] shrink-0 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-2-2-1-3-9-6-1-2" data-name="Allocation waste peak-regime n.s. marker">n.s.</span></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="relative h-[132px] mt-4 bg-[#241819] px-5 flex items-center gap-6" data-kid="2-2-3-3" data-name="selected cell detail panel" style="box-shadow: inset 0 0 0 1px rgba(255,191,0,0.22)">
+<span class="absolute left-0 top-0 w-2 h-2 border-l border-t border-[#FFBF00]/60" data-kid="2-2-3-3-1" data-name="top-left decorative corner bracket"></span>
+<span class="absolute right-0 top-0 w-2 h-2 border-r border-t border-[#FFBF00]/60" data-kid="2-2-3-3-2" data-name="top-right decorative corner bracket"></span>
+<span class="absolute left-0 bottom-0 w-2 h-2 border-l border-b border-[#FFBF00]/60" data-kid="2-2-3-3-3" data-name="bottom-left decorative corner bracket"></span>
+<span class="absolute right-0 bottom-0 w-2 h-2 border-r border-b border-[#FFBF00]/60" data-kid="2-2-3-3-4" data-name="bottom-right decorative corner bracket"></span>
+<div class="w-[228px] shrink-0 pr-5 border-r border-[#FFBF00]/15" data-kid="2-2-3-3-5" data-name="selected cell context summary">
+<div class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-3-5-1" data-name="selected cell section label">Selected cell</div>
+<div class="mt-1.5 text-[14px] font-medium text-[#FFBF00]" data-kid="2-2-3-3-5-2" data-name="selected metric title">Incumbent collisions <span class="text-[11px] font-normal text-[#FFBF00]/60" data-kid="2-2-3-3-5-2-1" data-name="selected metric unit">%</span></div>
+<div class="mt-1 text-[11px] tnum text-[#FFBF00]/60" data-kid="2-2-3-3-5-3" data-name="regime context text">high regime, 55 UEs</div>
+</div>
+<div class="flex-1 grid grid-cols-5 gap-4" data-kid="2-2-3-3-6" data-name="selected cell stat grid">
+<div data-kid="2-2-3-3-6-1" data-name="proposed value stat block">
+<div class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-3-6-1-1" data-name="proposed stat label">Proposed</div>
+<div class="mt-1.5 text-[14px] tnum text-[#FFBF00]/90" data-kid="2-2-3-3-6-1-2" data-name="proposed stat value">4.240%</div>
+<div class="mt-1 text-[10px] tnum text-[#FFBF00]/60" data-kid="2-2-3-3-6-1-3" data-name="proposed confidence interval">CI 3.62 – 4.91</div>
+</div>
+<div data-kid="2-2-3-3-6-2" data-name="best classical value stat block">
+<div class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-3-6-2-1" data-name="best classical stat label">Best classical</div>
+<div class="mt-1.5 text-[14px] tnum text-[#FFBF00]/90" data-kid="2-2-3-3-6-2-2" data-name="best classical stat value">7.578%</div>
+<div class="mt-1 text-[10px] tnum text-[#FFBF00]/60" data-kid="2-2-3-3-6-2-3" data-name="best classical method and CI">Proportional Fair, CI 6.66 – 8.43</div>
+</div>
+<div data-kid="2-2-3-3-6-3" data-name="improvement stat block">
+<div class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-3-6-3-1" data-name="improvement stat label">Improvement</div>
+<div class="mt-1.5 flex items-center gap-2 text-[14px] tnum text-[#FFBF00]" data-kid="2-2-3-3-6-3-2" data-name="improvement value with favourable dot"><span data-kid="2-2-3-3-6-3-2-1" data-name="improvement value text">+44.1%</span><span class="inline-block w-2 h-2 bg-[#32936F]" data-kid="2-2-3-3-6-3-2-2" data-name="improvement favourable indicator dot"></span></div>
+<div class="mt-1 text-[10px] text-[#FFBF00]/60" data-kid="2-2-3-3-6-3-3" data-name="improvement direction note">favourable direction</div>
+</div>
+<div data-kid="2-2-3-3-6-4" data-name="paired Wilcoxon p stat block">
+<div class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-3-6-4-1" data-name="Wilcoxon p stat label">Paired Wilcoxon p</div>
+<div class="mt-1.5 text-[14px] tnum text-[#FFBF00]/90" data-kid="2-2-3-3-6-4-2" data-name="Wilcoxon p value">0.0117</div>
+<div class="mt-1 text-[10px] tnum text-[#FFBF00]/60" data-kid="2-2-3-3-6-4-3" data-name="Wilcoxon pair count note">n = 8 paired seeds</div>
+</div>
+<div data-kid="2-2-3-3-6-5" data-name="Cliff's delta stat block">
+<div class="text-[11px] text-[#FFBF00]/60" data-kid="2-2-3-3-6-5-1" data-name="Cliff's delta stat label">Cliff's delta</div>
+<div class="mt-1.5 text-[14px] tnum text-[#FFBF00]/90" data-kid="2-2-3-3-6-5-2" data-name="Cliff's delta value">−0.9375</div>
+<div class="mt-1 text-[10px] tnum text-[#FFBF00]/60" data-kid="2-2-3-3-6-5-3" data-name="seed count note">8 seeds</div>
+</div>
+</div>
+<button class="shrink-0 h-9 px-4 text-[12px] font-medium bg-[#2274A5] text-white" data-kid="2-2-3-3-7" data-name="inspect result call-to-action button">Inspect result</button>
+</div>
+<div class="h-10 mt-4 flex items-end gap-1 border-b border-[#FFBF00]/15" data-kid="2-2-3-4" data-name="sub-detail tab bar">
+<button class="h-9 px-4 text-[12px] font-medium text-[#FFBF00] border border-[#FFBF00]/20 border-b-0" data-kid="2-2-3-4-1" data-name="active sub-detail tab (Paired statistics)" style="background:#241819">Paired statistics</button>
+<button class="h-9 px-4 text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-4-2" data-name="sub-detail tab (QoS by class)">QoS by class</button>
+<button class="h-9 px-4 text-[12px] text-[#FFBF00]/60" data-kid="2-2-3-4-3" data-name="sub-detail tab (Episode measurements)">Episode measurements</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

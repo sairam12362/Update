@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="kombai-design-canvas" content="true">
+  
+  
+  
+  <script src="https://unpkg.com/@tailwindcss/browser@4.3.3/dist/index.global.js" integrity="sha384-2ql948lIdLcGEE0/qxNiudyTjgauA3RDJERu5xW75kFCvSl5a9odyQYCb6tEjnmB" crossorigin="anonymous"></script>
+  
+  <style>html, body { margin: 0; padding: 0; } #root { display: contents; }</style>
+</head><body>
+  <div id="root"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+  @import url("https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css");
+
+  .pk-serif { font-family: 'PT Serif', Georgia, 'Times New Roman', serif; }
+  .tnum {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.012em;
+  }
+  .well { box-shadow: inset 0 1px 2px rgba(28,19,22,0.14), inset 0 0 0 1px rgba(28,19,22,0.09); }
+  .well-soft { box-shadow: inset 0 1px 2px rgba(28,19,22,0.07), inset 0 0 0 1px rgba(28,19,22,0.08); }
+  .nav-link { color: rgba(28,19,22,0.62); }
+  .nav-link:hover { color: #1C1316; }
+</style>
+<div class="min-h-screen w-full bg-[#FFFDF6] text-[#1C1316] antialiased" data-kid="1" data-name="page layout container" style="font-family:'PT Serif',Georgia,serif;">
+<!-- ── Persistent sidebar ─────────────────────────────────────── -->
+<aside class="fixed left-0 top-0 flex h-full w-[184px] flex-col border-r border-[rgba(28,19,22,0.16)] bg-[#FFFDF6] px-4 py-5" data-kid="1-1" data-name="fixed sidebar navigation">
+<div class="text-[14.5px] font-bold leading-[1.3] tracking-[-0.005em]" data-kid="1-1-1" data-name="sidebar app title">
+      Spectrum Allocation<br data-kid="1-1-1-1" data-name="line break in title"/>Benchmark
+    </div>
+<nav class="mt-9 flex flex-col" data-kid="1-1-2" data-name="sidebar navigation links">
+<a class="flex h-9 items-center" data-kid="1-1-2-1" data-name="active nav link" href="#">
+<span class="inline-block border-b-2 border-[#BEF5EF] pb-[3px] text-[13.5px] font-semibold text-[#1C1316]" data-kid="1-1-2-1-1" data-name="active nav link label with underline">Overview</span>
+</a>
+<a class="flex h-9 items-center text-[13.5px] text-[#1C1316]/60" data-kid="1-1-2-2" data-name="live simulation nav link" href="#">Live Simulation</a>
+<a class="flex h-9 items-center text-[13.5px] text-[#1C1316]/60" data-kid="1-1-2-3" data-name="predictor nav link" href="#">Predictor</a>
+<a class="flex h-9 items-center text-[13.5px] text-[#1C1316]/60" data-kid="1-1-2-4" data-name="ablation nav link" href="#">Ablation</a>
+<a class="flex h-9 items-center text-[13.5px] text-[#1C1316]/60" data-kid="1-1-2-5" data-name="methodology nav link" href="#">Methodology</a>
+</nav>
+<div class="mt-auto" data-kid="1-1-3" data-name="sidebar footer area">
+<div class="mb-3 flex items-baseline gap-1.5 border-t border-[rgba(28,19,22,0.12)] pt-3 text-[10.5px] text-[#1C1316]/50" data-kid="1-1-3-1" data-name="dataset summary stats row">
+<span class="tnum font-medium text-[#1C1316]/70" data-kid="1-1-3-1-1" data-name="episodes count value">288</span><span data-kid="1-1-3-1-2" data-name="episodes count label">episodes</span>
+<span class="ml-auto tnum font-medium text-[#1C1316]/70" data-kid="1-1-3-1-3" data-name="allocators count value">9</span><span data-kid="1-1-3-1-4" data-name="allocators count label">allocators</span>
+</div>
+<button class="well-soft flex h-8 w-full items-center justify-center gap-1 whitespace-nowrap rounded-[12px] px-1 text-[10.5px] text-[#1C1316]/75" data-kid="1-1-3-2" data-name="download statistics button">
+<i class="ri-download-2-line text-[11px]" data-kid="1-1-3-2-1" data-name="download icon"></i>
+        Download paired statistics
+      </button>
+</div>
+</aside>
+<!-- ── Main column ────────────────────────────────────────────── -->
+<main class="ml-[184px] px-6" data-kid="1-2" data-name="main content column">
+<!-- App header -->
+<header class="flex h-14 items-center justify-between border-b border-[rgba(28,19,22,0.14)]" data-kid="1-2-1" data-name="app header bar">
+<div class="text-[13px] font-bold tracking-[-0.005em]" data-kid="1-2-1-1" data-name="page title heading">Intelligent Spectrum Allocation for 5G/6G Networks</div>
+<div class="tnum flex items-center gap-2 text-[10.5px] text-[#1C1316]/55" data-kid="1-2-1-2" data-name="channel configuration badge">
+<i class="ri-signal-tower-line text-[12px]" data-kid="1-2-1-2-1" data-name="signal tower icon"></i>
+<span data-kid="1-2-1-2-2" data-name="bandwidth and slot config text">3.5 GHz carrier · 100 MHz · 18 RBG · 0.5 ms slot</span>
+</div>
+</header>
+<!-- Persistent filter bar -->
+<div class="flex h-14 items-center gap-5 border-b border-[rgba(28,19,22,0.14)]" data-kid="1-2-2" data-name="filter and config bar">
+<div class="text-[10.5px] text-[#1C1316]/55" data-kid="1-2-2-1" data-name="congestion regime label">Congestion regime</div>
+<div class="well-soft flex items-center gap-0.5 rounded-[12px] bg-[#FFFDF6] p-[3px]" data-kid="1-2-2-2" data-name="congestion regime segmented control">
+<span class="flex h-[26px] items-center rounded-[9px] px-2.5 text-[12px] text-[#1C1316]/60" data-kid="1-2-2-2-1" data-name="low regime option">Low</span>
+<span class="flex h-[26px] items-center rounded-[9px] px-2.5 text-[12px] text-[#1C1316]/60" data-kid="1-2-2-2-2" data-name="medium regime option">Medium</span>
+<span class="well flex h-[26px] items-center rounded-[9px] bg-white px-2.5 text-[12px] font-semibold text-[#1C1316]" data-kid="1-2-2-2-3" data-name="high regime active option">High</span>
+<span class="flex h-[26px] items-center rounded-[9px] px-2.5 text-[12px] text-[#1C1316]/60" data-kid="1-2-2-2-4" data-name="peak regime option">Peak</span>
+</div>
+<div class="flex items-center gap-4 border-l border-[rgba(28,19,22,0.12)] pl-5 text-[11px] text-[#1C1316]/60" data-kid="1-2-2-3" data-name="simulation parameters summary">
+<span data-kid="1-2-2-3-1" data-name="UE count display"><span class="tnum font-medium text-[#1C1316]" data-kid="1-2-2-3-1-1" data-name="UE count value">55</span> UEs</span>
+<span data-kid="1-2-2-3-2" data-name="load factor display">load <span class="tnum font-medium text-[#1C1316]" data-kid="1-2-2-3-2-1" data-name="load factor value">×1.60</span></span>
+<span data-kid="1-2-2-3-3" data-name="incumbent duty cycle display">incumbent duty <span class="tnum font-medium text-[#1C1316]" data-kid="1-2-2-3-3-1" data-name="incumbent duty value">34%</span></span>
+<span data-kid="1-2-2-3-4" data-name="seeds and slots count display"><span class="tnum font-medium text-[#1C1316]" data-kid="1-2-2-3-4-1" data-name="seeds count value">8</span> seeds × <span class="tnum font-medium text-[#1C1316]" data-kid="1-2-2-3-4-2" data-name="slots per seed value">1000</span> slots</span>
+</div>
+<div class="ml-auto flex items-center gap-1.5 text-[10.5px] text-[#1C1316]/55" data-kid="1-2-2-4" data-name="loaded models status badge">
+<i class="ri-hard-drive-3-line text-[12px]" data-kid="1-2-2-4-1" data-name="hard drive icon"></i>
+<span class="tnum" data-kid="1-2-2-4-2" data-name="loaded model names text">policy.pt, predictor.pt loaded</span>
+</div>
+</div>
+<!-- Authored framing -->
+<section class="mt-6 grid h-[112px] grid-cols-[700px_1fr] gap-8" data-kid="1-2-3" data-name="results summary framing section">
+<div class="space-y-1.5 text-[14px] leading-[1.55]" data-kid="1-2-3-1" data-name="sharing benefits summary column">
+<p data-kid="1-2-3-1-1" data-name="sharing collision reduction text">Sharing — incumbent collisions 44.8% lower at low load, 69.5% lower at peak; wasted vacancy 68.1–84.0% lower from medium load up. <span class="tnum text-[12.5px]" data-kid="1-2-3-1-1-1" data-name="statistical significance note">p&lt;0.05</span> in every regime.</p>
+<p data-kid="1-2-3-1-2" data-name="service metrics tradeoff text">Service — goodput 14.6% lower at high load and 21.5% lower at peak; Jain fairness 8.3% lower at high; QoS −3.3% at high (not significant).</p>
+</div>
+<div class="space-y-1.5 border-l border-[rgba(28,19,22,0.12)] pl-8 text-[14px] leading-[1.55]" data-kid="1-2-3-2" data-name="right column summary">
+<p data-kid="1-2-3-2-1" data-name="low load caveat text">Low load — wasted vacancy 70.4% higher than the best classical result (<span class="tnum text-[12.5px]" data-kid="1-2-3-2-1-1" data-name="p-value note">p=0.012</span>); collisions still 44.8% lower.</p>
+<p data-kid="1-2-3-2-2" data-name="overall best performer text">Strongest allocator overall — M-LWDF + learned sensing: QoS 49.52%, collisions 2.11%, wasted vacancy 15.57%.</p>
+</div>
+</section>
+<!-- ── Main region: metric index + evidence sheet ───────────── -->
+<section class="mt-5 flex h-[516px] gap-5" data-kid="1-2-4" data-name="metric index and evidence sheet section">
+<!-- Metric index -->
+<div class="flex h-full w-[240px] shrink-0 flex-col" data-kid="1-2-4-1" data-name="metric index sidebar">
+<div class="flex items-baseline justify-between pb-2 text-[10.5px] uppercase tracking-[0.07em] text-[#1C1316]/45" data-kid="1-2-4-1-1" data-name="metric index header">
+<span data-kid="1-2-4-1-1-1" data-name="metric column label">Metric</span>
+<span class="normal-case tracking-normal" data-kid="1-2-4-1-1-2" data-name="delta column label">Δ vs best classical</span>
+</div>
+<div class="border-t border-[rgba(28,19,22,0.12)]" data-kid="1-2-4-1-2" data-name="metric list">
+<!-- selected -->
+<div class="well -mx-2 flex h-10 items-center gap-2 rounded-[10px] px-2" data-kid="1-2-4-1-2-1" data-name="selected metric row.incumbent collisions">
+<span class="flex-1 truncate text-[13px] font-semibold" data-kid="1-2-4-1-2-1-1" data-name="metric name label">Incumbent collisions</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-1-2" data-name="metric delta value">+44.1%</span>
+<span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-1-2-1-3" data-name="improvement direction tag">gain</span>
+<span class="h-[7px] w-[7px] shrink-0 bg-[#1C1316]" data-kid="1-2-4-1-2-1-4" data-name="selection indicator dot"></span>
+</div>
+<div class="flex h-10 items-center gap-2 border-b border-[rgba(28,19,22,0.07)] px-2 -mx-2" data-kid="1-2-4-1-2-2" data-name="wasted vacancy metric row">
+<span class="flex-1 truncate text-[13px]" data-kid="1-2-4-1-2-2-1" data-name="metric name label">Wasted vacancy</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-2-2" data-name="metric delta value">+84.0%</span>
+<span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-1-2-2-3" data-name="improvement direction tag">gain</span>
+<span class="h-[7px] w-[7px] shrink-0 bg-[#1C1316]" data-kid="1-2-4-1-2-2-4" data-name="metric indicator dot"></span>
+</div>
+<div class="flex h-10 items-center gap-2 border-b border-[rgba(28,19,22,0.07)] px-2 -mx-2" data-kid="1-2-4-1-2-3" data-name="QoS satisfaction metric row">
+<span class="flex-1 truncate text-[13px]" data-kid="1-2-4-1-2-3-1" data-name="metric name label">QoS satisfaction</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-3-2" data-name="metric delta value">−3.3%</span>
+<span class="text-[10px] text-[#1C1316]/40" data-kid="1-2-4-1-2-3-3" data-name="loss direction tag">loss</span>
+<span class="h-[7px] w-[7px] shrink-0 border border-[rgba(28,19,22,0.4)]" data-kid="1-2-4-1-2-3-4" data-name="not significant indicator dot"></span>
+</div>
+<div class="flex h-10 items-center gap-2 border-b border-[rgba(28,19,22,0.07)] px-2 -mx-2" data-kid="1-2-4-1-2-4" data-name="goodput metric row">
+<span class="flex-1 truncate text-[13px]" data-kid="1-2-4-1-2-4-1" data-name="metric name label">Goodput</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-4-2" data-name="metric delta value">−14.6%</span>
+<span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-1-2-4-3" data-name="loss direction tag">loss</span>
+<span class="h-[7px] w-[7px] shrink-0 bg-[#1C1316]" data-kid="1-2-4-1-2-4-4" data-name="metric indicator dot"></span>
+</div>
+<div class="flex h-10 items-center gap-2 border-b border-[rgba(28,19,22,0.07)] px-2 -mx-2" data-kid="1-2-4-1-2-5" data-name="spectral efficiency metric row">
+<span class="flex-1 truncate text-[13px]" data-kid="1-2-4-1-2-5-1" data-name="metric name label">Spectral efficiency</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-5-2" data-name="metric delta value">−14.6%</span>
+<span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-1-2-5-3" data-name="loss direction tag">loss</span>
+<span class="h-[7px] w-[7px] shrink-0 bg-[#1C1316]" data-kid="1-2-4-1-2-5-4" data-name="metric indicator dot"></span>
+</div>
+<div class="flex h-10 items-center gap-2 border-b border-[rgba(28,19,22,0.07)] px-2 -mx-2" data-kid="1-2-4-1-2-6" data-name="Jain fairness metric row">
+<span class="flex-1 truncate text-[13px]" data-kid="1-2-4-1-2-6-1" data-name="metric name label">Jain fairness</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-6-2" data-name="metric delta value">−8.3%</span>
+<span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-1-2-6-3" data-name="loss direction tag">loss</span>
+<span class="h-[7px] w-[7px] shrink-0 bg-[#1C1316]" data-kid="1-2-4-1-2-6-4" data-name="metric indicator dot"></span>
+</div>
+<div class="flex h-10 items-center gap-2 border-b border-[rgba(28,19,22,0.07)] px-2 -mx-2" data-kid="1-2-4-1-2-7" data-name="deadline misses metric row">
+<span class="flex-1 truncate text-[13px]" data-kid="1-2-4-1-2-7-1" data-name="metric name label">Deadline misses</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-7-2" data-name="metric delta value">+6.8%</span>
+<span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-1-2-7-3" data-name="improvement direction tag">gain</span>
+<span class="h-[7px] w-[7px] shrink-0 bg-[#1C1316]" data-kid="1-2-4-1-2-7-4" data-name="metric indicator dot"></span>
+</div>
+<div class="flex h-10 items-center gap-2 border-b border-[rgba(28,19,22,0.07)] px-2 -mx-2" data-kid="1-2-4-1-2-8" data-name="p99 delay metric row">
+<span class="flex-1 truncate text-[13px]" data-kid="1-2-4-1-2-8-1" data-name="metric name label">p99 delay</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-8-2" data-name="metric delta value">−23.7%</span>
+<span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-1-2-8-3" data-name="loss direction tag">loss</span>
+<span class="h-[7px] w-[7px] shrink-0 bg-[#1C1316]" data-kid="1-2-4-1-2-8-4" data-name="metric indicator dot"></span>
+</div>
+<div class="flex h-10 items-center gap-2 border-b border-[rgba(28,19,22,0.07)] px-2 -mx-2" data-kid="1-2-4-1-2-9" data-name="allocation waste metric row">
+<span class="flex-1 truncate text-[13px]" data-kid="1-2-4-1-2-9-1" data-name="metric name label">Allocation waste</span>
+<span class="tnum text-[12.5px] font-medium" data-kid="1-2-4-1-2-9-2" data-name="metric delta value">+7.3%</span>
+<span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-1-2-9-3" data-name="improvement direction tag">gain</span>
+<span class="h-[7px] w-[7px] shrink-0 bg-[#1C1316]" data-kid="1-2-4-1-2-9-4" data-name="metric indicator dot"></span>
+</div>
+</div>
+<div class="mt-auto flex items-center gap-4 border-t border-[rgba(28,19,22,0.12)] pt-3 text-[10.5px] text-[#1C1316]/50" data-kid="1-2-4-1-3" data-name="metric index legend">
+<span class="inline-flex items-center gap-1.5" data-kid="1-2-4-1-3-1" data-name="significance legend item"><span class="h-[7px] w-[7px] bg-[#1C1316]" data-kid="1-2-4-1-3-1-1" data-name="significant dot indicator"></span><span class="tnum" data-kid="1-2-4-1-3-1-2" data-name="significance value label">p&lt;0.05</span></span>
+<span class="inline-flex items-center gap-1.5" data-kid="1-2-4-1-3-2" data-name="not significant legend item"><span class="h-[7px] w-[7px] border border-[rgba(28,19,22,0.4)]" data-kid="1-2-4-1-3-2-1" data-name="not significant outline dot"></span>not significant</span>
+</div>
+</div>
+<!-- Evidence sheet -->
+<div class="flex h-full flex-1 flex-col rounded-[18px] bg-white px-5 py-[18px]" data-kid="1-2-4-2" data-name="evidence sheet card">
+<div class="flex h-11 items-baseline justify-between" data-kid="1-2-4-2-1" data-name="metric card header">
+<h2 class="text-[20px] font-bold leading-none tracking-[-0.01em]" data-kid="1-2-4-2-1-1" data-name="metric card title">Incumbent collisions (%)</h2>
+<div class="flex items-baseline gap-5 text-[10.5px] text-[#1C1316]/50" data-kid="1-2-4-2-1-2" data-name="metric card meta row">
+<span data-kid="1-2-4-2-1-2-1" data-name="lower is better note">lower is better</span>
+<span class="tnum" data-kid="1-2-4-2-1-2-2" data-name="current regime tag">high regime</span>
+</div>
+</div>
+<!-- two-estimator mean and CI -->
+<svg aria-label="Proportional Fair collisions 7.578 percent, interval 6.66 to 8.43; NeuroSpectrum proposed 4.240 percent, interval 3.62 to 4.91" class="mt-1 w-full" data-kid="1-2-4-2-2" data-name="virtual estimator chart" role="img" style="height:212px" viewbox="0 0 908 212">
+<g stroke="rgba(28,19,22,0.07)" stroke-width="1">
+<line x1="8" x2="8" y1="36" y2="186"></line>
+<line x1="184" x2="184" y1="36" y2="186"></line>
+<line x1="360" x2="360" y1="36" y2="186"></line>
+<line x1="536" x2="536" y1="36" y2="186"></line>
+<line x1="712" x2="712" y1="36" y2="186"></line>
+<line x1="888" x2="888" y1="36" y2="186"></line>
+</g>
+<!-- Proportional Fair: 6.66 – 8.43, mean 7.578 -->
+<g>
+<rect fill="rgba(244,155,190,0.34)" height="10" rx="5" width="156" x="593.8" y="71"></rect>
+<line stroke="#1C1316" stroke-width="1.25" x1="593.8" x2="749.8" y1="76" y2="76"></line>
+<line stroke="#1C1316" stroke-width="1.25" x1="593.8" x2="593.8" y1="66" y2="86"></line>
+<line stroke="#1C1316" stroke-width="1.25" x1="749.8" x2="749.8" y1="66" y2="86"></line>
+<circle cx="674.9" cy="76" fill="#1C1316" r="4.2"></circle>
+<text fill="rgba(28,19,22,0.72)" font-family="'PT Serif',Georgia,serif" font-size="11.5" x="593.8" y="52">Proportional Fair</text>
+<text fill="#1C1316" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="500" style="font-variant-numeric:tabular-nums" x="758.8" y="80">7.578% [6.66, 8.43]</text>
+</g>
+<!-- NeuroSpectrum (proposed): 3.62 – 4.91, mean 4.240 -->
+<g>
+<rect fill="rgba(144,176,234,0.3)" height="10" rx="5" width="113.5" x="326.6" y="141"></rect>
+<line stroke="#1C1316" stroke-width="1.25" x1="326.6" x2="440.1" y1="146" y2="146"></line>
+<line stroke="#1C1316" stroke-width="1.25" x1="326.6" x2="326.6" y1="136" y2="156"></line>
+<line stroke="#1C1316" stroke-width="1.25" x1="440.1" x2="440.1" y1="136" y2="156"></line>
+<rect fill="#1C1316" height="8" width="8" x="389.1" y="142"></rect>
+<text fill="rgba(28,19,22,0.72)" font-family="'PT Serif',Georgia,serif" font-size="11.5" x="326.6" y="122">NeuroSpectrum (proposed)</text>
+<text fill="#1C1316" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="500" style="font-variant-numeric:tabular-nums" x="449.1" y="150">4.240% [3.62, 4.91]</text>
+</g>
+<!-- axis -->
+<line stroke="rgba(28,19,22,0.3)" stroke-width="1" x1="8" x2="888" y1="186" y2="186"></line>
+<g fill="rgba(28,19,22,0.5)" font-family="Inter,system-ui,sans-serif" font-size="10" style="font-variant-numeric:tabular-nums" text-anchor="middle">
+<line stroke="rgba(28,19,22,0.3)" stroke-width="1" x1="8" x2="8" y1="186" y2="192"></line>
+<text x="8" y="204">0%</text>
+<line stroke="rgba(28,19,22,0.3)" stroke-width="1" x1="184" x2="184" y1="186" y2="192"></line>
+<text x="184" y="204">2%</text>
+<line stroke="rgba(28,19,22,0.3)" stroke-width="1" x1="360" x2="360" y1="186" y2="192"></line>
+<text x="360" y="204">4%</text>
+<line stroke="rgba(28,19,22,0.3)" stroke-width="1" x1="536" x2="536" y1="186" y2="192"></line>
+<text x="536" y="204">6%</text>
+<line stroke="rgba(28,19,22,0.3)" stroke-width="1" x1="712" x2="712" y1="186" y2="192"></line>
+<text x="712" y="204">8%</text>
+<line stroke="rgba(28,19,22,0.3)" stroke-width="1" x1="888" x2="888" y1="186" y2="192"></line>
+<text x="888" y="204">10%</text>
+</g>
+</svg>
+<!-- aligned evidence fields -->
+<div class="well-soft mt-1 grid h-[124px] grid-cols-4 grid-rows-2 rounded-[12px]" data-kid="1-2-4-2-3" data-name="evidence statistics grid">
+<div class="flex flex-col justify-center px-3.5" data-kid="1-2-4-2-3-1" data-name="improvement stat cell">
+<div class="text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-1-1" data-name="improvement stat label">Improvement</div>
+<div class="tnum mt-1.5 text-[13px] font-medium leading-none" data-kid="1-2-4-2-3-1-2" data-name="improvement stat value">+44.1% <span class="text-[9.5px] font-normal leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-1-2-1" data-name="favourable direction note">favourable</span></div>
+</div>
+<div class="flex flex-col justify-center border-l border-[rgba(28,19,22,0.09)] px-3.5" data-kid="1-2-4-2-3-2" data-name="Wilcoxon p-value cell">
+<div class="text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-2-1" data-name="p-value label">Paired Wilcoxon p</div>
+<div class="tnum mt-1.5 text-[13px] font-medium leading-none" data-kid="1-2-4-2-3-2-2" data-name="p-value value">0.0117</div>
+</div>
+<div class="flex flex-col justify-center border-l border-[rgba(28,19,22,0.09)] px-3.5" data-kid="1-2-4-2-3-3" data-name="Cliff's delta cell">
+<div class="text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-3-1" data-name="Cliff's delta label">Cliff's delta</div>
+<div class="tnum mt-1.5 text-[13px] font-medium leading-none" data-kid="1-2-4-2-3-3-2" data-name="Cliff's delta value">−0.9375</div>
+</div>
+<div class="flex flex-col justify-center border-l border-[rgba(28,19,22,0.09)] px-3.5" data-kid="1-2-4-2-3-4" data-name="sample size cell">
+<div class="text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-4-1" data-name="n label">n</div>
+<div class="tnum mt-1.5 text-[13px] font-medium leading-none" data-kid="1-2-4-2-3-4-2" data-name="n value">8 <span class="text-[11px] font-normal text-[#1C1316]/60" data-kid="1-2-4-2-3-4-2-1" data-name="paired seeds note">paired seeds</span></div>
+</div>
+<div class="flex flex-col justify-center border-t border-[rgba(28,19,22,0.08)] px-3.5" data-kid="1-2-4-2-3-5" data-name="comparator cell">
+<div class="text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-5-1" data-name="comparator label">Comparator</div>
+<div class="mt-1.5 text-[13px] leading-none" data-kid="1-2-4-2-3-5-2" data-name="comparator name value">Proportional Fair</div>
+</div>
+<div class="flex flex-col justify-center border-l border-t border-[rgba(28,19,22,0.08)] px-3.5" data-kid="1-2-4-2-3-6" data-name="regime cell">
+<div class="text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-6-1" data-name="regime label">Regime</div>
+<div class="mt-1.5 text-[13px] leading-none" data-kid="1-2-4-2-3-6-2" data-name="regime value">high</div>
+</div>
+<div class="flex flex-col justify-center border-l border-t border-[rgba(28,19,22,0.08)] px-3.5" data-kid="1-2-4-2-3-7" data-name="UE cell">
+<div class="text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-7-1" data-name="UE label">UEs</div>
+<div class="tnum mt-1.5 text-[13px] font-medium leading-none" data-kid="1-2-4-2-3-7-2" data-name="UE value">55</div>
+</div>
+<div class="flex flex-col justify-center border-l border-t border-[rgba(28,19,22,0.08)] px-3.5" data-kid="1-2-4-2-3-8" data-name="incumbent duty cell">
+<div class="text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-2-3-8-1" data-name="incumbent duty label">Incumbent duty</div>
+<div class="tnum mt-1.5 text-[13px] font-medium leading-none" data-kid="1-2-4-2-3-8-2" data-name="incumbent duty value">34%</div>
+</div>
+</div>
+<!-- view tabs -->
+<div class="mt-auto flex h-[52px] items-center gap-6 border-t border-[rgba(28,19,22,0.1)]" data-kid="1-2-4-2-4" data-name="evidence view tabs">
+<button class="text-[12.5px] text-[#1C1316]/55" data-kid="1-2-4-2-4-1" data-name="across regimes tab">Across regimes</button>
+<button class="text-[12.5px] font-semibold text-[#1C1316]" data-kid="1-2-4-2-4-2" data-name="paired statistics active tab"><span class="inline-block border-b-2 border-[#BEF5EF] pb-[4px]" data-kid="1-2-4-2-4-2-1" data-name="active tab label with underline">Paired statistics</span></button>
+<button class="text-[12.5px] text-[#1C1316]/55" data-kid="1-2-4-2-4-3" data-name="QoS by class tab">QoS by class</button>
+<button class="ml-auto inline-flex items-center gap-1 text-[11.5px] text-[#1C1316]/70" data-kid="1-2-4-2-4-4" data-name="show source rows button">
+            Show source rows
+            <i class="ri-arrow-right-s-line text-[14px]" data-kid="1-2-4-2-4-4-1" data-name="right arrow icon"></i>
+</button>
+</div>
+</div>
+</section>
+<!-- Source row -->
+<div class="mt-5 flex h-10 items-center justify-between border-t border-[rgba(28,19,22,0.12)] text-[10.5px] text-[#1C1316]/50" data-kid="1-2-5" data-name="source data provenance footer">
+<div class="flex items-center gap-2" data-kid="1-2-5-1" data-name="source file info">
+<i class="ri-file-list-3-line text-[12px]" data-kid="1-2-5-1-1" data-name="file icon"></i>
+<span class="tnum" data-kid="1-2-5-1-2" data-name="source file description text">results/headline.csv · paired means over 8 seeds · Wilcoxon signed-rank</span>
+</div>
+<div class="tnum" data-kid="1-2-5-2" data-name="dataset scope summary text">4 regimes · 9 allocators · 32 paired episodes per allocator</div>
+</div>
+</main>
+</div></div>
+</body></html>

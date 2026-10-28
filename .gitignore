@@ -1,0 +1,61 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Streamlit local cache & secrets
+.streamlit/secrets.toml
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Logs and temporary files
+*.log
+scratch/
+.system_generated/
+
+# Trained model artifacts are small and are committed for reproducibility,
+# but keep scratch runs out of git.
+artifacts/*.tmp
+artifacts/*_tmp.pt
+
+# Training console logs
+train_run.log
+*.log
+
+# Quarantined checkpoints from superseded runs
+artifacts/_stale_*

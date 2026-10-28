@@ -1,0 +1,18 @@
+# Core scientific computing
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+
+# Deep learning (CPU is sufficient; the whole pipeline trains in ~35 min)
+torch>=2.0
+
+# Dashboard and figures
+streamlit>=1.30
+matplotlib>=3.7
+jinja2>=3.1.5
+
+# Markdown tables in the generated report
+tabulate>=0.9
+
+# Tests
+pytest>=7.4

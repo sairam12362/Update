@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="kombai-design-canvas" content="true">
+  
+  
+  
+  <script src="https://unpkg.com/@tailwindcss/browser@4.3.3/dist/index.global.js" integrity="sha384-2ql948lIdLcGEE0/qxNiudyTjgauA3RDJERu5xW75kFCvSl5a9odyQYCb6tEjnmB" crossorigin="anonymous"></script>
+  
+  <style>html, body { margin: 0; padding: 0; } #root { display: contents; }</style>
+</head><body>
+  <div id="root"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+  @import url("https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css");
+
+  .pk-serif { font-family: 'PT Serif', Georgia, 'Times New Roman', serif; }
+  .tnum {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.012em;
+  }
+  .well { box-shadow: inset 0 1px 2px rgba(28,19,22,0.14), inset 0 0 0 1px rgba(28,19,22,0.09); }
+  .well-soft { box-shadow: inset 0 1px 2px rgba(28,19,22,0.07), inset 0 0 0 1px rgba(28,19,22,0.08); }
+</style>
+<div class="min-h-screen w-full bg-[#FFFDF6] text-[#1C1316] antialiased" data-kid="1" data-name="wireless spectrum allocation dashboard root" style="font-family:'PT Serif',Georgia,serif;">
+<!-- ── Persistent sidebar ─────────────────────────────────────── -->
+<aside class="fixed left-0 top-0 flex h-full w-[184px] flex-col border-r border-[rgba(28,19,22,0.16)] bg-[#FFFDF6] px-4 py-5" data-kid="1-1" data-name="persistent sidebar navigation">
+<div class="text-[14.5px] font-bold leading-[1.3] tracking-[-0.005em]" data-kid="1-1-1" data-name="sidebar brand title">
+      Spectrum Allocation<br data-kid="1-1-1-1" data-name="line break separator"/>Benchmark
+    </div>
+<nav class="mt-9 flex flex-col" data-kid="1-1-2" data-name="sidebar navigation links">
+<a class="flex h-9 items-center text-[13.5px] text-[#1C1316]/60" data-kid="1-1-2-1" data-name="nav link Overview" href="#">Overview</a>
+<a class="flex h-9 items-center" data-kid="1-1-2-2" data-name="nav link Live Simulation" href="#">
+<span class="inline-block border-b-2 border-[#BEF5EF] pb-[3px] text-[13.5px] font-semibold text-[#1C1316]" data-kid="1-1-2-2-1" data-name="active nav item label">Live Simulation</span>
+</a>
+<a class="flex h-9 items-center text-[13.5px] text-[#1C1316]/60" data-kid="1-1-2-3" data-name="nav link Predictor" href="#">Predictor</a>
+<a class="flex h-9 items-center text-[13.5px] text-[#1C1316]/60" data-kid="1-1-2-4" data-name="nav link Ablation" href="#">Ablation</a>
+<a class="flex h-9 items-center text-[13.5px] text-[#1C1316]/60" data-kid="1-1-2-5" data-name="nav link Methodology" href="#">Methodology</a>
+</nav>
+<div class="mt-auto" data-kid="1-1-3" data-name="sidebar footer spacer container">
+<div class="mb-3 flex items-baseline gap-1.5 border-t border-[rgba(28,19,22,0.12)] pt-3 text-[10.5px] text-[#1C1316]/50" data-kid="1-1-3-1" data-name="resource summary stats row">
+<span class="tnum font-medium text-[#1C1316]/70" data-kid="1-1-3-1-1" data-name="episode count number">288</span><span data-kid="1-1-3-1-2" data-name="episodes unit label">episodes</span>
+<span class="ml-auto tnum font-medium text-[#1C1316]/70" data-kid="1-1-3-1-3" data-name="allocator count number">9</span><span data-kid="1-1-3-1-4" data-name="allocators unit label">allocators</span>
+</div>
+<button class="well-soft flex h-8 w-full items-center justify-center gap-1 whitespace-nowrap rounded-[12px] px-1 text-[10.5px] text-[#1C1316]/75" data-kid="1-1-3-2" data-name="download statistics button">
+<i class="ri-download-2-line text-[11px]" data-kid="1-1-3-2-1" data-name="download icon"></i>
+        Download paired statistics
+      </button>
+</div>
+</aside>
+<!-- ── Main column ────────────────────────────────────────────── -->
+<main class="ml-[184px] px-6" data-kid="1-2" data-name="main content column">
+<!-- App header -->
+<header class="flex h-14 items-center justify-between border-b border-[rgba(28,19,22,0.14)]" data-kid="1-2-1" data-name="app header bar">
+<div class="text-[13px] font-bold tracking-[-0.005em]" data-kid="1-2-1-1" data-name="current page title">Live Simulation</div>
+<div class="tnum flex items-center gap-2 text-[10.5px] text-[#1C1316]/55" data-kid="1-2-1-2" data-name="carrier specifications display">
+<i class="ri-signal-tower-line text-[12px]" data-kid="1-2-1-2-1" data-name="signal tower icon"></i>
+<span data-kid="1-2-1-2-2" data-name="carrier frequency spec text">3.5 GHz carrier · 100 MHz · 18 RBG · 0.5 ms slot</span>
+</div>
+</header>
+<!-- Persistent scope bar -->
+<div class="flex h-14 items-center gap-5 border-b border-[rgba(28,19,22,0.14)]" data-kid="1-2-2" data-name="simulation scope control bar">
+<div class="text-[10.5px] text-[#1C1316]/55" data-kid="1-2-2-1" data-name="congestion regime label">Congestion regime</div>
+<div class="well-soft flex items-center gap-0.5 rounded-[12px] bg-[#FFFDF6] p-[3px]" data-kid="1-2-2-2" data-name="regime selector segmented control">
+<span class="flex h-[26px] items-center rounded-[9px] px-2.5 text-[12px] text-[#1C1316]/60" data-kid="1-2-2-2-1" data-name="regime option Low (inactive)">Low</span>
+<span class="flex h-[26px] items-center rounded-[9px] px-2.5 text-[12px] text-[#1C1316]/60" data-kid="1-2-2-2-2" data-name="regime option Medium (inactive)">Medium</span>
+<span class="well flex h-[26px] items-center rounded-[9px] bg-white px-2.5 text-[12px] font-semibold text-[#1C1316]" data-kid="1-2-2-2-3" data-name="regime option High (selected)">High</span>
+<span class="flex h-[26px] items-center rounded-[9px] px-2.5 text-[12px] text-[#1C1316]/60" data-kid="1-2-2-2-4" data-name="regime option Peak (inactive)">Peak</span>
+</div>
+<div class="flex items-center gap-4 border-l border-[rgba(28,19,22,0.12)] pl-5 text-[11px] text-[#1C1316]/60" data-kid="1-2-2-3" data-name="simulation parameters group">
+<span data-kid="1-2-2-3-1" data-name="active user equipment count display"><span class="tnum font-medium text-[#1C1316]" data-kid="1-2-2-3-1-1" data-name="UE count number">55</span> UEs</span>
+<span data-kid="1-2-2-3-2" data-name="load multiplier display">load <span class="tnum font-medium text-[#1C1316]" data-kid="1-2-2-3-2-1" data-name="load multiplier value">×1.60</span></span>
+<span data-kid="1-2-2-3-3" data-name="incumbent duty cycle display">incumbent duty <span class="tnum font-medium text-[#1C1316]" data-kid="1-2-2-3-3-1" data-name="duty cycle value">34%</span></span>
+</div>
+<div class="ml-auto flex items-center gap-1.5 text-[10.5px] text-[#1C1316]/55" data-kid="1-2-2-4" data-name="model files status display">
+<i class="ri-hard-drive-3-line text-[12px]" data-kid="1-2-2-4-1" data-name="hard drive icon"></i>
+<span class="tnum" data-kid="1-2-2-4-2" data-name="loaded files status text">policy.pt, predictor.pt loaded</span>
+</div>
+</div>
+<!-- ── Run configuration ─────────────────────────────────── -->
+<section class="mt-5" data-kid="1-2-3" data-name="run configuration section">
+<div class="flex items-end gap-2.5" data-kid="1-2-3-1" data-name="run configuration controls row">
+<div class="w-[300px]" data-kid="1-2-3-1-1" data-name="allocator A dropdown group">
+<div class="mb-1.5 text-[10.5px] text-[#1C1316]/55" data-kid="1-2-3-1-1-1" data-name="allocator A field label">Allocator A</div>
+<div class="well flex h-9 items-center justify-between rounded-[10px] px-3" data-kid="1-2-3-1-1-2" data-name="allocator A selector dropdown">
+<span class="text-[13px]" data-kid="1-2-3-1-1-2-1" data-name="allocator A selected value">Proportional Fair</span>
+<i class="ri-arrow-down-s-line text-[13px] text-[#1C1316]/45" data-kid="1-2-3-1-1-2-2" data-name="dropdown chevron icon"></i>
+</div>
+</div>
+<div class="w-[320px]" data-kid="1-2-3-1-2" data-name="allocator B dropdown group">
+<div class="mb-1.5 text-[10.5px] text-[#1C1316]/55" data-kid="1-2-3-1-2-1" data-name="allocator B field label">Allocator B</div>
+<div class="well flex h-9 items-center justify-between rounded-[10px] px-3" data-kid="1-2-3-1-2-2" data-name="allocator B selector dropdown">
+<span class="text-[13px]" data-kid="1-2-3-1-2-2-1" data-name="allocator B selected value">NeuroSpectrum (proposed)</span>
+<i class="ri-arrow-down-s-line text-[13px] text-[#1C1316]/45" data-kid="1-2-3-1-2-2-2" data-name="dropdown chevron icon"></i>
+</div>
+</div>
+<div class="w-[120px]" data-kid="1-2-3-1-3" data-name="slots field group">
+<div class="mb-1.5 text-[10.5px] text-[#1C1316]/55" data-kid="1-2-3-1-3-1" data-name="slots field label">Slots</div>
+<div class="well flex h-9 items-center justify-center rounded-[10px]" data-kid="1-2-3-1-3-2" data-name="slots value field">
+<span class="tnum text-[13px]" data-kid="1-2-3-1-3-2-1" data-name="slots value number">1000</span>
+</div>
+</div>
+<div class="w-[120px]" data-kid="1-2-3-1-4" data-name="seed field group">
+<div class="mb-1.5 text-[10.5px] text-[#1C1316]/55" data-kid="1-2-3-1-4-1" data-name="seed field label">Seed</div>
+<div class="well flex h-9 items-center justify-center rounded-[10px]" data-kid="1-2-3-1-4-2" data-name="seed value field">
+<span class="tnum text-[13px]" data-kid="1-2-3-1-4-2-1" data-name="seed value number">1000</span>
+</div>
+</div>
+<div class="ml-auto pb-[1px]" data-kid="1-2-3-1-5" data-name="run button container">
+<button class="flex h-10 items-center gap-2 whitespace-nowrap rounded-full bg-[#BEF5EF] px-6 text-[12.5px] font-semibold text-[#1C1316]" data-kid="1-2-3-1-5-1" data-name="primary run paired episode button">
+<i class="ri-play-line text-[13px]" data-kid="1-2-3-1-5-1-1" data-name="play icon"></i>
+            Run paired episode
+          </button>
+</div>
+</div>
+<div class="mt-2 flex items-center gap-2 text-[10.5px] text-[#1C1316]/50" data-kid="1-2-3-2" data-name="simulation duration indicator">
+<i class="ri-timer-line text-[11px]" data-kid="1-2-3-2-1" data-name="timer icon"></i>
+<span class="tnum" data-kid="1-2-3-2-2" data-name="simulated duration text">500 ms simulated</span>
+</div>
+</section>
+<!-- ── Main region: run record + paired evidence ───────────── -->
+<section class="mt-4 flex h-[740px] gap-5" data-kid="1-2-4" data-name="main results region">
+<!-- Run record index -->
+<div class="flex h-full w-[240px] shrink-0 flex-col" data-kid="1-2-4-1" data-name="run record index panel">
+<div class="flex items-baseline justify-between pb-2 text-[10.5px] uppercase tracking-[0.07em] text-[#1C1316]/45" data-kid="1-2-4-1-1" data-name="run record panel header">
+<span data-kid="1-2-4-1-1-1" data-name="run record section title">Run record</span>
+<span class="normal-case tracking-normal" data-kid="1-2-4-1-1-2" data-name="stored records count">4 stored</span>
+</div>
+<div class="border-t border-[rgba(28,19,22,0.12)]" data-kid="1-2-4-1-2" data-name="stored runs list">
+<div class="well -mx-2 flex h-10 items-center gap-2 rounded-[10px] px-2" data-kid="1-2-4-1-2-1" data-name="selected run record row">
+<div data-kid="1-2-4-1-2-1-1" data-name="selected run details">
+<div class="text-[12.5px] font-semibold leading-none" data-kid="1-2-4-1-2-1-1-1" data-name="selected run regime label">high</div>
+<div class="tnum mt-1 text-[10.5px] leading-none text-[#1C1316]/50" data-kid="1-2-4-1-2-1-1-2" data-name="selected run seed">seed 1000</div>
+</div>
+<span class="tnum ml-auto text-[10.5px] text-[#1C1316]/55" data-kid="1-2-4-1-2-1-2" data-name="selected run slot count">1000 slots</span>
+</div>
+<div class="flex h-10 items-center gap-2 px-2 -mx-2 border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-1-2-2" data-name="run record row 2">
+<div data-kid="1-2-4-1-2-2-1" data-name="run record 2 details">
+<div class="text-[12.5px] leading-none" data-kid="1-2-4-1-2-2-1-1" data-name="run record 2 regime label">high</div>
+<div class="tnum mt-1 text-[10.5px] leading-none text-[#1C1316]/45" data-kid="1-2-4-1-2-2-1-2" data-name="run record 2 seed">seed 1097</div>
+</div>
+<span class="tnum ml-auto text-[10.5px] text-[#1C1316]/45" data-kid="1-2-4-1-2-2-2" data-name="run record 2 slot count">1000 slots</span>
+</div>
+<div class="flex h-10 items-center gap-2 px-2 -mx-2 border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-1-2-3" data-name="run record row 3">
+<div data-kid="1-2-4-1-2-3-1" data-name="run record 3 details">
+<div class="text-[12.5px] leading-none" data-kid="1-2-4-1-2-3-1-1" data-name="run record 3 regime label">medium</div>
+<div class="tnum mt-1 text-[10.5px] leading-none text-[#1C1316]/45" data-kid="1-2-4-1-2-3-1-2" data-name="run record 3 seed">seed 1000</div>
+</div>
+<span class="tnum ml-auto text-[10.5px] text-[#1C1316]/45" data-kid="1-2-4-1-2-3-2" data-name="run record 3 slot count">1000 slots</span>
+</div>
+<div class="flex h-10 items-center gap-2 px-2 -mx-2 border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-1-2-4" data-name="run record row 4">
+<div data-kid="1-2-4-1-2-4-1" data-name="run record 4 details">
+<div class="text-[12.5px] leading-none" data-kid="1-2-4-1-2-4-1-1" data-name="run record 4 regime label">low</div>
+<div class="tnum mt-1 text-[10.5px] leading-none text-[#1C1316]/45" data-kid="1-2-4-1-2-4-1-2" data-name="run record 4 seed">seed 1000</div>
+</div>
+<span class="tnum ml-auto text-[10.5px] text-[#1C1316]/45" data-kid="1-2-4-1-2-4-2" data-name="run record 4 slot count">1000 slots</span>
+</div>
+</div>
+<div class="mt-6" data-kid="1-2-4-1-3" data-name="episode fields container">
+<div class="border-t border-[rgba(28,19,22,0.12)] pt-3" data-kid="1-2-4-1-3-1" data-name="episode fields list">
+<div class="pb-1.5 text-[10.5px] uppercase tracking-[0.07em] text-[#1C1316]/45" data-kid="1-2-4-1-3-1-1" data-name="episode fields section title">Episode fields</div>
+<div class="flex items-baseline justify-between py-1 text-[11.5px]" data-kid="1-2-4-1-3-1-2" data-name="slots simulated field row">
+<span class="text-[#1C1316]/55" data-kid="1-2-4-1-3-1-2-1" data-name="slots simulated label">Slots simulated</span>
+<span class="tnum" data-kid="1-2-4-1-3-1-2-2" data-name="slots simulated value">1000</span>
+</div>
+<div class="flex items-baseline justify-between py-1 text-[11.5px]" data-kid="1-2-4-1-3-1-3" data-name="slot duration field row">
+<span class="text-[#1C1316]/55" data-kid="1-2-4-1-3-1-3-1" data-name="slot duration label">Slot duration</span>
+<span class="tnum" data-kid="1-2-4-1-3-1-3-2" data-name="slot duration value">0.5 ms</span>
+</div>
+<div class="flex items-baseline justify-between py-1 text-[11.5px]" data-kid="1-2-4-1-3-1-4" data-name="RBG field row">
+<span class="text-[#1C1316]/55" data-kid="1-2-4-1-3-1-4-1" data-name="RBG label">RBG</span>
+<span class="tnum" data-kid="1-2-4-1-3-1-4-2" data-name="RBG value">18</span>
+</div>
+<div class="flex items-baseline justify-between py-1 text-[11.5px]" data-kid="1-2-4-1-3-1-5" data-name="incumbent subbands field row">
+<span class="text-[#1C1316]/55" data-kid="1-2-4-1-3-1-5-1" data-name="incumbent subbands label">Incumbent subbands</span>
+<span class="tnum" data-kid="1-2-4-1-3-1-5-2" data-name="incumbent subbands value">6</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Paired run evidence -->
+<div class="flex h-full flex-1 flex-col gap-4" data-kid="1-2-4-2" data-name="paired evidence content column">
+<!-- Comparison record -->
+<div class="h-[352px] rounded-[18px] bg-white px-5 py-[14px]" data-kid="1-2-4-2-1" data-name="paired episode comparison card">
+<div class="flex h-[30px] items-baseline justify-between" data-kid="1-2-4-2-1-1" data-name="comparison card header">
+<h2 class="text-[17px] font-bold leading-none tracking-[-0.01em]" data-kid="1-2-4-2-1-1-1" data-name="comparison card title">Paired episode comparison</h2>
+<div class="tnum text-[10.5px] text-[#1C1316]/50" data-kid="1-2-4-2-1-1-2" data-name="comparison type note">single episode, no paired test</div>
+</div>
+<div class="mt-1 grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[22px] border-b border-[rgba(28,19,22,0.24)] text-[10px] text-[#1C1316]/55" data-kid="1-2-4-2-1-2" data-name="comparison table header row">
+<div data-kid="1-2-4-2-1-2-1" data-name="header cell Metric">Metric</div>
+<div class="text-right" data-kid="1-2-4-2-1-2-2" data-name="header cell Proportional Fair">Proportional Fair</div>
+<div class="text-right" data-kid="1-2-4-2-1-2-3" data-name="header cell NeuroSpectrum">NeuroSpectrum</div>
+<div class="text-right" data-kid="1-2-4-2-1-2-4" data-name="header cell Change">Change</div>
+<div class="pl-6" data-kid="1-2-4-2-1-2-5" data-name="header cell A vs B">A vs B</div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px] border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-2-1-3" data-name="QoS satisfaction row">
+<div class="text-[12.5px]" data-kid="1-2-4-2-1-3-1" data-name="QoS satisfaction metric name">QoS satisfaction</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-3-2" data-name="Proportional Fair QoS value">12.727%</div>
+<div class="tnum text-right text-[12.5px] font-medium" data-kid="1-2-4-2-1-3-3" data-name="NeuroSpectrum QoS value">14.545%</div>
+<div class="tnum text-right text-[12px]" data-kid="1-2-4-2-1-3-4" data-name="QoS change percentage">+14.3% <span class="text-[10px] text-[#1C1316]/50" data-kid="1-2-4-2-1-3-4-1" data-name="QoS change direction label">better</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-3-5" data-name="QoS comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-3-5-1" data-name="Proportional Fair QoS bar" style="width:87.5%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-3-5-2" data-name="NeuroSpectrum QoS bar" style="width:100%"></div></div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px] border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-2-1-4" data-name="goodput row">
+<div class="text-[12.5px]" data-kid="1-2-4-2-1-4-1" data-name="goodput metric name">Goodput</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-4-2" data-name="Proportional Fair goodput value">195.600</div>
+<div class="tnum text-right text-[12.5px] font-medium" data-kid="1-2-4-2-1-4-3" data-name="NeuroSpectrum goodput value">193.888</div>
+<div class="text-right text-[12.5px]" data-kid="1-2-4-2-1-4-4" data-name="goodput change percentage"><span class="tnum" data-kid="1-2-4-2-1-4-4-1" data-name="goodput change value">−0.9%</span> <span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-2-1-4-4-2" data-name="goodput change direction label">worse</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-4-5" data-name="goodput comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-4-5-1" data-name="Proportional Fair goodput bar" style="width:100%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-4-5-2" data-name="NeuroSpectrum goodput bar" style="width:99.1%"></div></div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px] border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-2-1-5" data-name="spectral efficiency row">
+<div class="text-[12.5px]" data-kid="1-2-4-2-1-5-1" data-name="spectral efficiency metric name">Spectral efficiency</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-5-2" data-name="Proportional Fair SE value">2.173</div>
+<div class="tnum text-right text-[12.5px] font-medium" data-kid="1-2-4-2-1-5-3" data-name="NeuroSpectrum SE value">2.154</div>
+<div class="text-right text-[12.5px]" data-kid="1-2-4-2-1-5-4" data-name="SE change percentage"><span class="tnum" data-kid="1-2-4-2-1-5-4-1" data-name="SE change value">−0.9%</span> <span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-2-1-5-4-2" data-name="SE change direction label">worse</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-5-5" data-name="SE comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-5-5-1" data-name="Proportional Fair SE bar" style="width:100%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-5-5-2" data-name="NeuroSpectrum SE bar" style="width:99.1%"></div></div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px] border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-2-1-6" data-name="p99 delay row">
+<div class="text-[12.5px]" data-kid="1-2-4-2-1-6-1" data-name="p99 delay metric name">p99 delay</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-6-2" data-name="Proportional Fair p99 delay value">150.500</div>
+<div class="tnum text-right text-[12.5px] font-medium" data-kid="1-2-4-2-1-6-3" data-name="NeuroSpectrum p99 delay value">206.000</div>
+<div class="text-right text-[12.5px]" data-kid="1-2-4-2-1-6-4" data-name="p99 delay change percentage"><span class="tnum" data-kid="1-2-4-2-1-6-4-1" data-name="p99 delay change value">−36.9%</span> <span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-2-1-6-4-2" data-name="p99 delay change direction label">worse</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-6-5" data-name="p99 delay comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-6-5-1" data-name="Proportional Fair p99 delay bar" style="width:73.1%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-6-5-2" data-name="NeuroSpectrum p99 delay bar" style="width:100%"></div></div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px] border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-2-1-7" data-name="deadline misses row">
+<div class="text-[12.5px]" data-kid="1-2-4-2-1-7-1" data-name="deadline misses metric name">Deadline misses</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-7-2" data-name="Proportional Fair deadline miss value">30.690%</div>
+<div class="tnum text-right text-[12.5px] font-medium" data-kid="1-2-4-2-1-7-3" data-name="NeuroSpectrum deadline miss value">28.235%</div>
+<div class="tnum text-right text-[12px]" data-kid="1-2-4-2-1-7-4" data-name="deadline misses change percentage">+8.0% <span class="text-[10px] text-[#1C1316]/50" data-kid="1-2-4-2-1-7-4-1" data-name="deadline misses change direction label">better</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-7-5" data-name="deadline misses comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-7-5-1" data-name="Proportional Fair deadline miss bar" style="width:100%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-7-5-2" data-name="NeuroSpectrum deadline miss bar" style="width:92%"></div></div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px] border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-2-1-8" data-name="incumbent collisions row">
+<div class="text-[12.5px] font-semibold" data-kid="1-2-4-2-1-8-1" data-name="incumbent collisions metric name">Incumbent collisions</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-8-2" data-name="Proportional Fair collisions value">7.115%</div>
+<div class="tnum text-right text-[12.5px] font-semibold" data-kid="1-2-4-2-1-8-3" data-name="NeuroSpectrum collisions value">5.304%</div>
+<div class="tnum text-right text-[12px] font-semibold" data-kid="1-2-4-2-1-8-4" data-name="incumbent collisions change percentage">+25.5% <span class="text-[10px] font-normal text-[#1C1316]/50" data-kid="1-2-4-2-1-8-4-1" data-name="collisions change direction label">better</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-8-5" data-name="collisions comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-8-5-1" data-name="Proportional Fair collisions bar" style="width:100%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-8-5-2" data-name="NeuroSpectrum collisions bar" style="width:74.5%"></div></div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px] border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-2-1-9" data-name="wasted vacancy row">
+<div class="text-[12.5px] font-semibold" data-kid="1-2-4-2-1-9-1" data-name="wasted vacancy metric name">Wasted vacancy</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-9-2" data-name="Proportional Fair vacancy value">11.431%</div>
+<div class="tnum text-right text-[12.5px] font-semibold" data-kid="1-2-4-2-1-9-3" data-name="NeuroSpectrum vacancy value">1.958%</div>
+<div class="tnum text-right text-[12px] font-semibold" data-kid="1-2-4-2-1-9-4" data-name="wasted vacancy change percentage">+82.9% <span class="text-[10px] font-normal text-[#1C1316]/50" data-kid="1-2-4-2-1-9-4-1" data-name="vacancy change direction label">better</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-9-5" data-name="vacancy comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-9-5-1" data-name="Proportional Fair vacancy bar" style="width:100%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-9-5-2" data-name="NeuroSpectrum vacancy bar" style="width:17.1%"></div></div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px] border-b border-[rgba(28,19,22,0.07)]" data-kid="1-2-4-2-1-10" data-name="Jain fairness row">
+<div class="text-[12.5px]" data-kid="1-2-4-2-1-10-1" data-name="Jain fairness metric name">Jain fairness</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-10-2" data-name="Proportional Fair Jain value">0.8389</div>
+<div class="tnum text-right text-[12.5px] font-medium" data-kid="1-2-4-2-1-10-3" data-name="NeuroSpectrum Jain value">0.7976</div>
+<div class="text-right text-[12.5px]" data-kid="1-2-4-2-1-10-4" data-name="Jain fairness change percentage"><span class="tnum" data-kid="1-2-4-2-1-10-4-1" data-name="Jain change value">−4.9%</span> <span class="text-[10px] text-[#1C1316]/55" data-kid="1-2-4-2-1-10-4-2" data-name="Jain change direction label">worse</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-10-5" data-name="Jain comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-10-5-1" data-name="Proportional Fair Jain bar" style="width:100%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-10-5-2" data-name="NeuroSpectrum Jain bar" style="width:95.1%"></div></div>
+</div>
+<div class="grid grid-cols-[188px_104px_130px_120px_1fr] items-center h-[30px]" data-kid="1-2-4-2-1-11" data-name="allocation waste row">
+<div class="text-[12.5px]" data-kid="1-2-4-2-1-11-1" data-name="allocation waste metric name">Allocation waste</div>
+<div class="tnum text-right text-[12.5px]" data-kid="1-2-4-2-1-11-2" data-name="Proportional Fair waste value">8.031%</div>
+<div class="tnum text-right text-[12.5px] font-medium" data-kid="1-2-4-2-1-11-3" data-name="NeuroSpectrum waste value">3.088%</div>
+<div class="tnum text-right text-[12px]" data-kid="1-2-4-2-1-11-4" data-name="allocation waste change percentage">+61.5% <span class="text-[10px] text-[#1C1316]/50" data-kid="1-2-4-2-1-11-4-1" data-name="allocation waste change direction label">better</span></div>
+<div class="pl-6 pr-[168px]" data-kid="1-2-4-2-1-11-5" data-name="allocation waste comparison bar container"><div class="h-[3px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-1-11-5-1" data-name="Proportional Fair waste bar" style="width:100%"></div><div class="mt-[3px] h-[3px] bg-[#1C1316]" data-kid="1-2-4-2-1-11-5-2" data-name="NeuroSpectrum waste bar" style="width:38.4%"></div></div>
+</div>
+</div>
+<!-- Occupancy -->
+<div class="h-[372px] rounded-[18px] bg-white px-5 py-[14px]" data-kid="1-2-4-2-2" data-name="spectrum occupancy heatmap card">
+<div class="flex h-[26px] items-baseline justify-between" data-kid="1-2-4-2-2-1" data-name="occupancy card header">
+<div class="flex items-baseline gap-5" data-kid="1-2-4-2-2-1-1" data-name="occupancy title group">
+<h2 class="text-[17px] font-bold leading-none tracking-[-0.01em]" data-kid="1-2-4-2-2-1-1-1" data-name="occupancy card title">Spectrum occupancy</h2>
+<div class="tnum text-[10.5px] text-[#1C1316]/50" data-kid="1-2-4-2-2-1-1-2" data-name="occupancy dimensions subtitle">18 RBG × 1000 slots</div>
+</div>
+<div class="flex items-center gap-4 text-[10px] text-[#1C1316]/55" data-kid="1-2-4-2-2-1-2" data-name="occupancy legend">
+<span class="inline-flex items-center gap-1.5" data-kid="1-2-4-2-2-1-2-1" data-name="idle legend item"><span class="h-[6px] w-[14px] border border-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-2-1-2-1-1" data-name="idle legend swatch"></span>idle</span>
+<span class="inline-flex items-center gap-1.5" data-kid="1-2-4-2-2-1-2-2" data-name="clean TX legend item"><span class="h-[6px] w-[14px] bg-[rgba(28,19,22,0.22)]" data-kid="1-2-4-2-2-1-2-2-1" data-name="clean TX legend swatch"></span>clean TX</span>
+<span class="inline-flex items-center gap-1.5" data-kid="1-2-4-2-2-1-2-3" data-name="collision legend item"><span class="h-[6px] w-[14px] bg-[#1C1316]" data-kid="1-2-4-2-2-1-2-3-1" data-name="collision legend swatch"></span>collision</span>
+</div>
+</div>
+<div class="mt-2" data-kid="1-2-4-2-2-2" data-name="Proportional Fair occupancy group">
+<div class="flex items-baseline justify-between text-[11px]" data-kid="1-2-4-2-2-2-1" data-name="Proportional Fair occupancy label row">
+<span class="text-[#1C1316]/70" data-kid="1-2-4-2-2-2-1-1" data-name="Proportional Fair allocator name">Proportional Fair</span>
+<span class="tnum text-[10.5px] text-[#1C1316]/50" data-kid="1-2-4-2-2-2-1-2" data-name="Proportional Fair occupancy stats">collisions 7.115% · wasted vacancy 11.431%</span>
+</div>
+<div class="mt-1" data-dynamic="true" data-kid="1-2-4-2-2-2-2" data-name="Proportional Fair occupancy heatmap" data-reason="SVG chart injected by script with rects generated from seeded RNG" id="occ-a"></div>
+</div>
+<div class="mt-2" data-kid="1-2-4-2-2-3" data-name="NeuroSpectrum occupancy group">
+<div class="flex items-baseline justify-between text-[11px]" data-kid="1-2-4-2-2-3-1" data-name="NeuroSpectrum occupancy label row">
+<span class="text-[#1C1316]/70" data-kid="1-2-4-2-2-3-1-1" data-name="NeuroSpectrum allocator name">NeuroSpectrum (proposed)</span>
+<span class="tnum text-[10.5px] text-[#1C1316]/50" data-kid="1-2-4-2-2-3-1-2" data-name="NeuroSpectrum occupancy stats">collisions 5.304% · wasted vacancy 1.958%</span>
+</div>
+<div class="mt-1" data-dynamic="true" data-kid="1-2-4-2-2-3-2" data-name="NeuroSpectrum occupancy heatmap" data-reason="SVG chart injected by script with rects generated from seeded RNG" id="occ-b"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Provenance -->
+<div class="mt-4 flex h-10 items-center justify-between border-t border-[rgba(28,19,22,0.12)] text-[10.5px] text-[#1C1316]/50" data-kid="1-2-5" data-name="provenance footer bar">
+<div class="flex items-center gap-2" data-kid="1-2-5-1" data-name="provenance source info">
+<i class="ri-file-list-3-line text-[12px]" data-kid="1-2-5-1-1" data-name="file list icon"></i>
+<span class="tnum" data-kid="1-2-5-1-2" data-name="source file and parameters text">results/kpi_by_regime.csv · episode 1000 slots · seed 1000 · regime high</span>
+</div>
+<div class="flex items-center gap-5" data-kid="1-2-5-2" data-name="nav action links group">
+<a class="inline-flex items-center gap-1 text-[#1C1316]/70" data-kid="1-2-5-2-1" data-name="per-slot KPIs link" href="#">Per-slot KPIs <i class="ri-arrow-right-s-line text-[13px]" data-kid="1-2-5-2-1-1" data-name="right arrow icon"></i></a>
+<a class="inline-flex items-center gap-1 text-[#1C1316]/70" data-kid="1-2-5-2-2" data-name="radar link" href="#">Radar <i class="ri-arrow-right-s-line text-[13px]" data-kid="1-2-5-2-2-1" data-name="right arrow icon"></i></a>
+</div>
+</div>
+</main>
+</div>
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  var ROWS = 18, ROW_H = 6.2, VW = 908, GUT = 30, RPAD = 8, PAD_T = 2;
+  var PLOT_W = VW - GUT - RPAD;
+  var PLOT_H = ROWS * ROW_H;
+  var H = PLOT_H + PAD_T + 20;
+
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function el(name, attrs) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) { n.setAttribute(k, attrs[k]); }
+    return n;
+  }
+
+  function draw(hostId, mode, seed) {
+    var host = document.getElementById(hostId);
+    if (!host) return;
+    var svg = el('svg', { viewBox: '0 0 ' + VW + ' ' + H, width: '100%', height: H, role: 'img' });
+    svg.style.display = 'block';
+    svg.setAttribute('aria-label', mode === 'A'
+      ? 'Proportional Fair occupancy over 18 resource block groups and 1000 slots, with collision and idle blocks'
+      : 'NeuroSpectrum proposed occupancy over 18 resource block groups and 1000 slots, with collisions and little idle');
+
+    // row rules
+    for (var r = 0; r <= ROWS; r++) {
+      var y = PAD_T + r * ROW_H;
+      var subbandEdge = (ROWS - r) % 3 === 0;
+      svg.appendChild(el('line', {
+        x1: GUT, x2: GUT + PLOT_W, y1: y, y2: y,
+        stroke: subbandEdge ? 'rgba(28,19,22,0.30)' : 'rgba(28,19,22,0.10)',
+        'stroke-width': 1
+      }));
+    }
+
+    // occupancy blocks — one detector per subband, so the three RBG rows of a
+    // subband share the same mute/collision decision across a burst
+    for (var s = 0; s < 6; s++) {
+      var rndS = mulberry32(seed + s * 104729);
+      var segs = [], t0 = 0;
+      while (t0 < 1000) {
+        var occSeg = ((t0 + s * 18) % 124) < 42;
+        var t1 = t0 + 1;
+        while (t1 < 1000 && ((((t1 + s * 18) % 124) < 42) === occSeg)) { t1++; }
+        var base;
+        if (occSeg) {
+          base = rndS() < (mode === 'A' ? 0.15 : 0.035) ? 2 : 0;
+        } else {
+          base = rndS() < (mode === 'A' ? 0.12 : 0.035) ? 0 : 1;
+        }
+        segs.push([t0, t1, base]);
+        t0 = t1;
+      }
+
+      for (var k = 0; k < 3; k++) {
+        var row = ROWS - 1 - (s * 3 + k);
+        var rndRow = mulberry32(seed + row * 7919);
+        for (var i = 0; i < segs.length; i++) {
+          var a = segs[i][0], b = segs[i][1], state = segs[i][2];
+          if (state === 1 && rndRow() > (mode === 'A' ? 0.90 : 0.975)) { state = 0; }
+          if (state === 0) continue;
+          var x = GUT + (a / 1000) * PLOT_W;
+          var w = Math.max(0.7, ((b - a) / 1000) * PLOT_W);
+          svg.appendChild(el('rect', {
+            x: x.toFixed(2), y: (PAD_T + row * ROW_H + 0.9).toFixed(2),
+            width: w.toFixed(2), height: (ROW_H - 1.8).toFixed(2),
+            fill: state === 2 ? '#1C1316' : 'rgba(28,19,22,0.22)'
+          }));
+        }
+      }
+    }
+
+    // axis
+    var baseY = PAD_T + PLOT_H;
+    svg.appendChild(el('line', { x1: GUT, x2: GUT + PLOT_W, y1: baseY + 1, y2: baseY + 1, stroke: 'rgba(28,19,22,0.28)', 'stroke-width': 1 }));
+    for (var q = 0; q <= 1000; q += 200) {
+      var tx = GUT + (q / 1000) * PLOT_W;
+      svg.appendChild(el('line', { x1: tx, x2: tx, y1: baseY + 1, y2: baseY + 4, stroke: 'rgba(28,19,22,0.28)', 'stroke-width': 1 }));
+      var label = el('text', {
+        x: tx, y: baseY + 14, fill: 'rgba(28,19,22,0.55)', 'font-size': 9,
+        'font-family': 'Inter, system-ui, sans-serif', 'text-anchor': q === 0 ? 'start' : (q === 1000 ? 'end' : 'middle')
+      });
+      label.textContent = String(q);
+      svg.appendChild(label);
+    }
+
+    // row labels
+    var top = el('text', { x: GUT - 6, y: PAD_T + 5, fill: 'rgba(28,19,22,0.5)', 'font-size': 8.5, 'font-family': 'Inter, system-ui, sans-serif', 'text-anchor': 'end' });
+    top.textContent = '17';
+    svg.appendChild(top);
+    var bot = el('text', { x: GUT - 6, y: baseY - 1, fill: 'rgba(28,19,22,0.5)', 'font-size': 8.5, 'font-family': 'Inter, system-ui, sans-serif', 'text-anchor': 'end' });
+    bot.textContent = '0';
+    svg.appendChild(bot);
+
+    host.appendChild(svg);
+  }
+
+  draw('occ-a', 'A', 20261028);
+  draw('occ-b', 'B', 74031);
+})();
+</script></div>
+</body></html>

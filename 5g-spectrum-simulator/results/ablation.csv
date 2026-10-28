@@ -1,0 +1,6 @@
+allocator,qos_satisfaction_pct,goodput_mbps,deadline_miss_pct,collision_pct,wasted_vacancy_pct,jain_fairness
+M-LWDF,45.742,159.466,12.861,6.817,22.792,0.662
+M-LWDF + learned sensing,49.52,171.896,11.811,2.107,15.567,0.651
+"NeuroSpectrum, hard sensing (ablation)",43.115,156.635,12.6,7.604,23.399,0.658
+"NeuroSpectrum, BC only / no RL (ablation)",47.486,168.176,12.366,2.43,17.91,0.648
+NeuroSpectrum (proposed),47.344,171.905,11.944,2.998,14.927,0.655

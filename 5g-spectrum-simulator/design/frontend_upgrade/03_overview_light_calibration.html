@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="kombai-design-canvas" content="true">
+  
+  
+  
+  <script src="https://unpkg.com/@tailwindcss/browser@4.3.3/dist/index.global.js" integrity="sha384-2ql948lIdLcGEE0/qxNiudyTjgauA3RDJERu5xW75kFCvSl5a9odyQYCb6tEjnmB" crossorigin="anonymous"></script>
+  
+  <style>html, body { margin: 0; padding: 0; } #root { display: contents; }</style>
+</head><body>
+  <div id="root"><style>
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css');
+
+.speckle-bench{
+  background-color:#EBE9E9;
+  background-image:radial-gradient(rgba(16,23,29,0.055) 0.6px, transparent 0.7px),radial-gradient(rgba(16,23,29,0.035) 0.6px, transparent 0.7px);
+  background-size:5px 5px,13px 11px;
+  background-position:0 0, 3px 4px;
+}
+.speckle-amber{
+  background-color:#FCB07E;
+  background-image:radial-gradient(rgba(16,23,29,0.07) 0.6px, transparent 0.7px);
+  background-size:6px 6px;
+}
+.graphpaper{
+  background-color:#FFFFFF;
+  background-image:linear-gradient(to right, rgba(16,23,29,0.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(16,23,29,0.055) 1px, transparent 1px);
+  background-size:16px 16px;
+  background-position:-1px -1px;
+}
+</style>
+<div class="min-h-screen w-full bg-[#EBE9E9] text-[#10171D] flex items-stretch" data-kid="1" data-name="page layout container (speckle themed dashboard shell)" style="font-family:'Chivo',ui-sans-serif,system-ui,sans-serif;font-variant-numeric:tabular-nums;">
+<!-- SIDEBAR -->
+<aside class="speckle-bench w-[224px] shrink-0 border-r border-[#10171D]/20 px-4 pt-4 pb-4 flex flex-col" data-kid="1-1" data-name="left sidebar with navigation and metadata">
+<div class="pb-3 border-b border-[#10171D]/20" data-kid="1-1-1" data-name="sidebar brand section with title">
+<div class="text-[13px] font-semibold leading-[1.25] tracking-[-0.01em]" data-kid="1-1-1-1" data-name="sidebar app title (Spectrum Allocation Benchmark)">Spectrum Allocation<br data-kid="1-1-1-1-1" data-name="line break in title"/>Benchmark</div>
+</div>
+<nav class="mt-3 flex flex-col gap-px" data-kid="1-1-2" data-name="sidebar main navigation menu">
+<div class="flex h-[34px] items-center gap-2 rounded-[10px] bg-white px-2.5" data-kid="1-1-2-1" data-name="active nav item: Overview (highlighted with amber underline)">
+<i class="ph ph-chart-line-up text-[14px] leading-none text-[#10171D]/65" data-kid="1-1-2-1-1" data-name="line chart icon"></i>
+<span class="text-[13px] font-semibold leading-none border-b-2 border-[#FCB07E] pb-[3px]" data-kid="1-1-2-1-2" data-name="nav item label: Overview">Overview</span>
+</div>
+<div class="flex h-[34px] items-center gap-2 rounded-[10px] px-2.5" data-kid="1-1-2-2" data-name="nav item: Live Simulation">
+<i class="ph ph-play-circle text-[14px] leading-none text-[#10171D]/45" data-kid="1-1-2-2-1" data-name="play circle icon"></i>
+<span class="text-[13px] leading-none text-[#10171D]/70" data-kid="1-1-2-2-2" data-name="nav item label: Live Simulation">Live Simulation</span>
+</div>
+<div class="flex h-[34px] items-center gap-2 rounded-[10px] px-2.5" data-kid="1-1-2-3" data-name="nav item: Predictor">
+<i class="ph ph-waveform text-[14px] leading-none text-[#10171D]/45" data-kid="1-1-2-3-1" data-name="waveform icon"></i>
+<span class="text-[13px] leading-none text-[#10171D]/70" data-kid="1-1-2-3-2" data-name="nav item label: Predictor">Predictor</span>
+</div>
+<div class="flex h-[34px] items-center gap-2 rounded-[10px] px-2.5" data-kid="1-1-2-4" data-name="nav item: Ablation">
+<i class="ph ph-sliders-horizontal text-[14px] leading-none text-[#10171D]/45" data-kid="1-1-2-4-1" data-name="sliders icon"></i>
+<span class="text-[13px] leading-none text-[#10171D]/70" data-kid="1-1-2-4-2" data-name="nav item label: Ablation">Ablation</span>
+</div>
+<div class="flex h-[34px] items-center gap-2 rounded-[10px] px-2.5" data-kid="1-1-2-5" data-name="nav item: Methodology">
+<i class="ph ph-book-open-text text-[14px] leading-none text-[#10171D]/45" data-kid="1-1-2-5-1" data-name="open book icon"></i>
+<span class="text-[13px] leading-none text-[#10171D]/70" data-kid="1-1-2-5-2" data-name="nav item label: Methodology">Methodology</span>
+</div>
+</nav>
+<div class="mt-4 pt-3 border-t border-[#10171D]/20" data-kid="1-1-3" data-name="sources section in sidebar">
+<div class="text-[11px] font-medium text-[#10171D]/60" data-kid="1-1-3-1" data-name="section label: Sources">Sources</div>
+<div class="mt-1.5 flex flex-col gap-1" data-kid="1-1-3-2" data-name="sources file list">
+<div class="flex items-center gap-1.5 text-[11px] leading-4 text-[#10171D]/80" data-kid="1-1-3-2-1" data-name="source file row: results/ablation.csv">
+<i class="ph ph-table text-[12px] leading-none text-[#10171D]/40" data-kid="1-1-3-2-1-1" data-name="table icon"></i>
+<span data-kid="1-1-3-2-1-2" data-name="source file name text">results/ablation.csv</span>
+</div>
+<div class="flex items-center gap-1.5 text-[11px] leading-4 text-[#10171D]/80" data-kid="1-1-3-2-2" data-name="source file row: results/headline.csv">
+<i class="ph ph-table text-[12px] leading-none text-[#10171D]/40" data-kid="1-1-3-2-2-1" data-name="table icon"></i>
+<span data-kid="1-1-3-2-2-2" data-name="source file name text">results/headline.csv</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-3 border-t border-[#10171D]/20" data-kid="1-1-4" data-name="model artifacts section in sidebar">
+<div class="text-[11px] font-medium text-[#10171D]/60" data-kid="1-1-4-1" data-name="section label: Model artifacts">Model artifacts</div>
+<div class="mt-1.5 flex flex-col gap-1 text-[11px] leading-4" data-kid="1-1-4-2" data-name="model artifact file list">
+<div class="flex items-center justify-between" data-kid="1-1-4-2-1" data-name="artifact row: policy.pt (loaded)">
+<span class="text-[#10171D]/80" data-kid="1-1-4-2-1-1" data-name="artifact file name: policy.pt">policy.pt</span>
+<span class="text-[#10171D]/50" data-kid="1-1-4-2-1-2" data-name="artifact status label: loaded">loaded</span>
+</div>
+<div class="flex items-center justify-between" data-kid="1-1-4-2-2" data-name="artifact row: predictor.pt (loaded)">
+<span class="text-[#10171D]/80" data-kid="1-1-4-2-2-1" data-name="artifact file name: predictor.pt">predictor.pt</span>
+<span class="text-[#10171D]/50" data-kid="1-1-4-2-2-2" data-name="artifact status label: loaded">loaded</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- MAIN -->
+<div class="flex-1 min-w-0 flex flex-col" data-kid="1-2" data-name="main content column">
+<!-- HEADER 52 -->
+<header class="h-[52px] shrink-0 px-4 flex items-center justify-between border-b border-[#10171D]/20 bg-[#EBE9E9]" data-kid="1-2-1" data-name="page header with title and configuration summary">
+<div class="text-[15px] font-semibold leading-none" data-kid="1-2-1-1" data-name="header page title: Overview">Overview</div>
+<div class="flex items-center gap-3" data-kid="1-2-1-2" data-name="header configuration summary bar">
+<span class="flex items-baseline gap-1.5" data-kid="1-2-1-2-1" data-name="band configuration (3.5 GHz)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-1-2-1-1" data-name="band label">band</span><span class="text-[12px] font-medium" data-kid="1-2-1-2-1-2" data-name="band value: 3.5 GHz">3.5 GHz</span></span>
+<span class="h-3 w-px bg-[#10171D]/25" data-kid="1-2-1-2-2" data-name="vertical divider"></span>
+<span class="flex items-baseline gap-1.5" data-kid="1-2-1-2-3" data-name="carrier configuration (100 MHz)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-1-2-3-1" data-name="carrier label">carrier</span><span class="text-[12px] font-medium" data-kid="1-2-1-2-3-2" data-name="carrier value: 100 MHz">100 MHz</span></span>
+<span class="h-3 w-px bg-[#10171D]/25" data-kid="1-2-1-2-4" data-name="vertical divider"></span>
+<span class="flex items-baseline gap-1.5" data-kid="1-2-1-2-5" data-name="SCS configuration (30 kHz)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-1-2-5-1" data-name="SCS label">SCS</span><span class="text-[12px] font-medium" data-kid="1-2-1-2-5-2" data-name="SCS value: 30 kHz">30 kHz</span></span>
+<span class="h-3 w-px bg-[#10171D]/25" data-kid="1-2-1-2-6" data-name="vertical divider"></span>
+<span class="flex items-baseline gap-1.5" data-kid="1-2-1-2-7" data-name="RBG configuration (18)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-1-2-7-1" data-name="RBG label">RBG</span><span class="text-[12px] font-medium" data-kid="1-2-1-2-7-2" data-name="RBG value: 18">18</span></span>
+<span class="h-3 w-px bg-[#10171D]/25" data-kid="1-2-1-2-8" data-name="vertical divider"></span>
+<span class="flex items-baseline gap-1.5" data-kid="1-2-1-2-9" data-name="slot configuration (0.5 ms)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-1-2-9-1" data-name="slot label">slot</span><span class="text-[12px] font-medium" data-kid="1-2-1-2-9-2" data-name="slot value: 0.5 ms">0.5 ms</span></span>
+</div>
+</header>
+<!-- FILTER BAR 52 -->
+<div class="speckle-amber h-[52px] shrink-0 px-4 flex items-center gap-4 border-b border-[#10171D]/25" data-kid="1-2-2" data-name="filter/parameter bar (amber theme)">
+<div class="flex items-center gap-1.5" data-kid="1-2-2-1" data-name="regime filter label with funnel icon">
+<i class="ph ph-funnel text-[13px] leading-none text-[#10171D]/75" data-kid="1-2-2-1-1" data-name="funnel filter icon"></i>
+<span class="text-[11px] font-semibold text-[#10171D]/75" data-kid="1-2-2-1-2" data-name="Regime label text">Regime</span>
+</div>
+<div class="flex items-center gap-0.5 rounded-[14px] bg-[#10171D]/10 p-[3px]" data-kid="1-2-2-2" data-name="regime segmented control">
+<div class="flex h-[26px] items-center rounded-[10px] bg-white px-2.5 text-[12px] font-semibold" data-kid="1-2-2-2-1" data-name="active regime pill: All regimes">All regimes</div>
+<div class="flex h-[26px] items-center px-2.5 text-[12px] text-[#10171D]/75" data-kid="1-2-2-2-2" data-name="regime pill option: Low">Low</div>
+<div class="flex h-[26px] items-center px-2.5 text-[12px] text-[#10171D]/75" data-kid="1-2-2-2-3" data-name="regime pill option: Medium">Medium</div>
+<div class="flex h-[26px] items-center px-2.5 text-[12px] text-[#10171D]/75" data-kid="1-2-2-2-4" data-name="regime pill option: High">High</div>
+<div class="flex h-[26px] items-center px-2.5 text-[12px] text-[#10171D]/75" data-kid="1-2-2-2-5" data-name="regime pill option: Peak">Peak</div>
+</div>
+<span class="h-5 w-px bg-[#10171D]/25" data-kid="1-2-2-3" data-name="vertical divider"></span>
+<div class="flex items-center gap-3" data-kid="1-2-2-4" data-name="parameter constraint summary bar">
+<span class="flex items-baseline gap-1.5" data-kid="1-2-2-4-1" data-name="UEs constraint (20-80)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-2-4-1-1" data-name="UEs label">UEs</span><span class="text-[12px] font-medium" data-kid="1-2-2-4-1-2" data-name="UEs value: 20-80">20–80</span></span>
+<span class="h-3 w-px bg-[#10171D]/25" data-kid="1-2-2-4-2" data-name="vertical divider"></span>
+<span class="flex items-baseline gap-1.5" data-kid="1-2-2-4-3" data-name="load constraint (x0.55-2.30)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-2-4-3-1" data-name="load label">load</span><span class="text-[12px] font-medium" data-kid="1-2-2-4-3-2" data-name="load value: x0.55-2.30">×0.55–2.30</span></span>
+<span class="h-3 w-px bg-[#10171D]/25" data-kid="1-2-2-4-4" data-name="vertical divider"></span>
+<span class="flex items-baseline gap-1.5" data-kid="1-2-2-4-5" data-name="duty constraint (12-46%)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-2-4-5-1" data-name="duty label">duty</span><span class="text-[12px] font-medium" data-kid="1-2-2-4-5-2" data-name="duty value: 12-46%">12–46%</span></span>
+<span class="h-3 w-px bg-[#10171D]/25" data-kid="1-2-2-4-6" data-name="vertical divider"></span>
+<span class="flex items-baseline gap-1.5" data-kid="1-2-2-4-7" data-name="seeds constraint (8 seeds x 1000 slots)"><span class="text-[11px] text-[#10171D]/60" data-kid="1-2-2-4-7-1" data-name="seeds label: 8 seeds x">8 seeds ×</span><span class="text-[12px] font-medium" data-kid="1-2-2-4-7-2" data-name="slots value: 1000 slots">1000 slots</span></span>
+</div>
+</div>
+<!-- CONTENT -->
+<div class="flex-1 px-4 pt-3 pb-4 flex flex-col gap-3" data-kid="1-2-3" data-name="scrollable main content area">
+<!-- FRAMING 92 -->
+<section class="h-[92px] grid grid-cols-[1fr_1px_1fr] items-start" data-kid="1-2-3-1" data-name="framing summary section (two-column findings)">
+<div class="pr-5" data-kid="1-2-3-1-1" data-name="spectrum sharing findings column">
+<div class="text-[11px] font-semibold text-[#10171D]/60" data-kid="1-2-3-1-1-1" data-name="column label: Spectrum sharing">Spectrum sharing</div>
+<div class="mt-1.5 flex flex-col gap-1 text-[13px] leading-[18px]" data-kid="1-2-3-1-1-2" data-name="findings list">
+<div data-kid="1-2-3-1-1-2-1" data-name="finding: interference reduction 42-69%">Harmful interference to the incumbent <span class="font-semibold" data-kid="1-2-3-1-1-2-1-1" data-name="highlighted stat: 42–69%">42–69%</span> lower, every regime, <span class="font-medium" data-kid="1-2-3-1-1-2-1-2" data-name="significance note: p &lt; 0.05">p &lt; 0.05</span></div>
+<div data-kid="1-2-3-1-1-2-2" data-name="finding: wasted vacancy 68-84% lower">Wasted vacancy <span class="font-semibold" data-kid="1-2-3-1-1-2-2-1" data-name="highlighted stat: 68–84%">68–84%</span> lower at medium load and above, <span class="font-medium" data-kid="1-2-3-1-1-2-2-2" data-name="significance note: p &lt; 0.05">p &lt; 0.05</span></div>
+</div>
+</div>
+<div class="h-[76px] w-px bg-[#10171D]/20" data-kid="1-2-3-1-2" data-name="vertical divider between columns"></div>
+<div class="pl-5" data-kid="1-2-3-1-3" data-name="service quality findings column">
+<div class="text-[11px] font-semibold text-[#10171D]/60" data-kid="1-2-3-1-3-1" data-name="column label: Service quality">Service quality</div>
+<div class="mt-1.5 flex flex-col gap-1 text-[13px] leading-[18px]" data-kid="1-2-3-1-3-2" data-name="findings list">
+<div data-kid="1-2-3-1-3-2-1" data-name="finding: QoS no significant difference">QoS satisfaction: no significant difference in any regime, <span class="font-medium" data-kid="1-2-3-1-3-2-1-1" data-name="significance note: p ≥ 0.069">p ≥ 0.069</span></div>
+<div data-kid="1-2-3-1-3-2-2" data-name="finding: goodput/delay/fairness significantly worse">Goodput, p99 delay and Jain fairness <span class="font-medium" data-kid="1-2-3-1-3-2-2-1" data-name="highlighted phrase: significantly worse">significantly worse</span> at high and peak load</div>
+<div data-kid="1-2-3-1-3-2-3" data-name="finding: strongest overall configuration">Strongest overall configuration: <span class="font-semibold" data-kid="1-2-3-1-3-2-3-1" data-name="highlighted config: M-LWDF + learned sensing">M-LWDF + learned sensing</span></div>
+</div>
+</div>
+</section>
+<!-- COMPONENT SUBSTITUTION MAP 206 -->
+<section class="graphpaper h-[206px] shrink-0 rounded-[14px] border border-[#10171D]/20 px-4 py-3" data-kid="1-2-3-2" data-name="component substitution map section (graph paper style)">
+<div class="flex items-baseline justify-between" data-kid="1-2-3-2-1" data-name="section header row">
+<div class="text-[13px] font-semibold" data-dynamic="true" data-kid="1-2-3-2-1-1" data-name="section title: Component substitution" data-reason="false">Component substitution, 5 configurations</div>
+<div class="text-[11px] text-[#10171D]/55" data-kid="1-2-3-2-1-2" data-name="source label: results/ablation.csv">results/ablation.csv</div>
+</div>
+<div class="mt-2 flex flex-col gap-2" data-kid="1-2-3-2-2" data-name="substitution routes container">
+<!-- route A -->
+<div class="flex items-stretch" data-kid="1-2-3-2-2-1" data-name="route A: M-LWDF to learned sensing row">
+<div class="w-[248px] shrink-0 rounded-[14px] border border-[#10171D]/25 bg-white px-3 py-2" data-kid="1-2-3-2-2-1-1" data-name="source configuration card: M-LWDF">
+<div class="text-[13px] font-medium leading-4" data-kid="1-2-3-2-2-1-1-1" data-name="config name: M-LWDF">M-LWDF</div>
+<div class="mt-1 grid grid-cols-[62px_1fr] gap-x-1.5 text-[11px] leading-[13px]" data-kid="1-2-3-2-2-1-1-2" data-name="config spec grid">
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-1-1-2-1" data-name="spec label: scheduler">scheduler</span><span data-kid="1-2-3-2-2-1-1-2-2" data-name="spec value: M-LWDF">M-LWDF</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-1-1-2-3" data-name="spec label: sensing">sensing</span><span data-kid="1-2-3-2-2-1-1-2-4" data-name="spec value: energy detector">energy detector</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-1-1-2-5" data-name="spec label: training">training</span><span data-kid="1-2-3-2-2-1-1-2-6" data-name="spec value: none">none</span>
+</div>
+</div>
+<div class="flex w-[128px] shrink-0 flex-col items-center justify-center px-2" data-kid="1-2-3-2-2-1-2" data-name="route A transformation step (replace sensing front-end)">
+<div class="text-center text-[10px] leading-[12px] text-[#10171D]/60" data-kid="1-2-3-2-2-1-2-1" data-name="transformation description text">replace sensing<br data-kid="1-2-3-2-2-1-2-1-1" data-name="line break"/>front-end</div>
+<div class="mt-1 flex w-full items-center gap-0" data-kid="1-2-3-2-2-1-2-2" data-name="connector arrow with line">
+<span class="h-px flex-1 bg-[#10171D]/40" data-kid="1-2-3-2-2-1-2-2-1" data-name="connector line"></span>
+<span class="text-[12px] leading-none text-[#10171D]/60" data-kid="1-2-3-2-2-1-2-2-2" data-name="arrow symbol">→</span>
+</div>
+</div>
+<div class="w-[288px] shrink-0 rounded-[14px] border border-[#10171D]/45 bg-white px-3 py-2" data-kid="1-2-3-2-2-1-3" data-name="target configuration card: M-LWDF + learned sensing (bolder border)">
+<div class="text-[13px] font-semibold leading-4" data-kid="1-2-3-2-2-1-3-1" data-name="config name: M-LWDF + learned sensing">M-LWDF + learned sensing</div>
+<div class="mt-1 grid grid-cols-[62px_1fr] gap-x-1.5 text-[11px] leading-[13px]" data-kid="1-2-3-2-2-1-3-2" data-name="config spec grid">
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-1-3-2-1" data-name="spec label: scheduler">scheduler</span><span data-kid="1-2-3-2-2-1-3-2-2" data-name="spec value: M-LWDF">M-LWDF</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-1-3-2-3" data-name="spec label: sensing">sensing</span><span data-kid="1-2-3-2-2-1-3-2-4" data-name="spec value: GRU filter">GRU filter</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-1-3-2-5" data-name="spec label: training">training</span><span data-kid="1-2-3-2-2-1-3-2-6" data-name="spec value: GRU">GRU, supervised</span>
+</div>
+</div>
+<div class="ml-2 flex items-start pt-1" data-kid="1-2-3-2-2-1-4" data-name="annotation container: strongest overall">
+<span class="whitespace-nowrap text-[10.5px] font-medium text-[#10171D]/70" data-kid="1-2-3-2-2-1-4-1" data-name="badge: strongest overall">strongest overall</span>
+</div>
+</div>
+<!-- route B -->
+<div class="flex items-stretch" data-kid="1-2-3-2-2-2" data-name="route B: NeuroSpectrum multi-step row">
+<div class="w-[218px] shrink-0 rounded-[14px] border border-[#10171D]/25 bg-white px-3 py-2" data-kid="1-2-3-2-2-2-1" data-name="source configuration card: NeuroSpectrum">
+<div class="whitespace-nowrap text-[12.5px] font-medium leading-4" data-kid="1-2-3-2-2-2-1-1" data-name="config name: NeuroSpectrum">NeuroSpectrum, hard sensing</div>
+<div class="mt-1 grid grid-cols-[62px_1fr] gap-x-1.5 text-[11px] leading-[13px]" data-kid="1-2-3-2-2-2-1-2" data-name="config spec grid">
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-1-2-1" data-name="spec label: scheduler">scheduler</span><span data-kid="1-2-3-2-2-2-1-2-2" data-name="spec value: learned attention">learned attention</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-1-2-3" data-name="spec label: sensing">sensing</span><span data-kid="1-2-3-2-2-2-1-2-4" data-name="spec value: energy detector">energy detector</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-1-2-5" data-name="spec label: training">training</span><span data-kid="1-2-3-2-2-2-1-2-6" data-name="spec value: BC + PPO">BC + PPO</span>
+</div>
+</div>
+<div class="flex w-[96px] shrink-0 flex-col items-center justify-center px-2" data-kid="1-2-3-2-2-2-2" data-name="transformation step: clone teacher">
+<div class="text-center text-[10px] leading-[12px] text-[#10171D]/60" data-dynamic="true" data-kid="1-2-3-2-2-2-2-1" data-name="transformation description" data-reason="false">clone teacher</div>
+<div class="mt-1 flex w-full items-center" data-kid="1-2-3-2-2-2-2-2" data-name="connector arrow with line">
+<span class="h-px flex-1 bg-[#10171D]/40" data-kid="1-2-3-2-2-2-2-2-1" data-name="connector line"></span>
+<span class="text-[12px] leading-none text-[#10171D]/60" data-kid="1-2-3-2-2-2-2-2-2" data-name="arrow symbol">→</span>
+</div>
+</div>
+<div class="w-[190px] shrink-0 rounded-[14px] border border-[#10171D]/25 bg-white px-3 py-2" data-kid="1-2-3-2-2-2-3" data-name="intermediate configuration card: NeuroSpectrum">
+<div class="text-[13px] font-medium leading-4" data-kid="1-2-3-2-2-2-3-1" data-name="config name: NeuroSpectrum">NeuroSpectrum, BC only</div>
+<div class="mt-1 grid grid-cols-[62px_1fr] gap-x-1.5 text-[11px] leading-[13px]" data-kid="1-2-3-2-2-2-3-2" data-name="config spec grid">
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-3-2-1" data-name="spec label: scheduler">scheduler</span><span data-kid="1-2-3-2-2-2-3-2-2" data-name="spec value: learned attention">learned attention</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-3-2-3" data-name="spec label: sensing">sensing</span><span data-kid="1-2-3-2-2-2-3-2-4" data-name="spec value: GRU filter">GRU filter</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-3-2-5" data-name="spec label: training">training</span><span data-kid="1-2-3-2-2-2-3-2-6" data-name="spec value: BC">BC</span>
+</div>
+</div>
+<div class="flex w-[92px] shrink-0 flex-col items-center justify-center px-2" data-kid="1-2-3-2-2-2-4" data-name="transformation step: PPO fine-tune">
+<div class="text-center text-[10px] leading-[12px] text-[#10171D]/60" data-dynamic="true" data-kid="1-2-3-2-2-2-4-1" data-name="transformation description" data-reason="false">PPO fine-tune</div>
+<div class="mt-1 flex w-full items-center" data-kid="1-2-3-2-2-2-4-2" data-name="connector arrow with line">
+<span class="h-px flex-1 bg-[#10171D]/40" data-kid="1-2-3-2-2-2-4-2-1" data-name="connector line"></span>
+<span class="text-[12px] leading-none text-[#10171D]/60" data-kid="1-2-3-2-2-2-4-2-2" data-name="arrow symbol">→</span>
+</div>
+</div>
+<div class="w-[214px] shrink-0 rounded-[14px] border border-[#10171D]/25 bg-white px-3 py-2" data-kid="1-2-3-2-2-2-5" data-name="target configuration card: NeuroSpectrum">
+<div class="text-[13px] font-medium leading-4" data-kid="1-2-3-2-2-2-5-1" data-name="config name: NeuroSpectrum">NeuroSpectrum, BC + PPO</div>
+<div class="mt-1 grid grid-cols-[62px_1fr] gap-x-1.5 text-[11px] leading-[13px]" data-kid="1-2-3-2-2-2-5-2" data-name="config spec grid">
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-5-2-1" data-name="spec label: scheduler">scheduler</span><span data-kid="1-2-3-2-2-2-5-2-2" data-name="spec value: learned attention">learned attention</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-5-2-3" data-name="spec label: sensing">sensing</span><span data-kid="1-2-3-2-2-2-5-2-4" data-name="spec value: GRU filter">GRU filter</span>
+<span class="text-[#10171D]/55" data-kid="1-2-3-2-2-2-5-2-5" data-name="spec label: training">training</span><span data-kid="1-2-3-2-2-2-5-2-6" data-name="spec value: BC + PPO">BC + PPO</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AGGREGATE MATRIX 252 -->
+<section class="h-[252px] shrink-0 rounded-[14px] border border-[#10171D]/20 bg-white px-4 py-2.5" data-kid="1-2-3-3" data-name="aggregate results matrix section">
+<div class="flex items-baseline justify-between" data-kid="1-2-3-3-1" data-name="section header row">
+<div class="text-[13px] font-semibold" data-dynamic="true" data-kid="1-2-3-3-1-1" data-name="section title: All-regime aggregate" data-reason="false">All-regime aggregate, 5 allocator configurations</div>
+<div class="text-[11px] text-[#10171D]/55" data-kid="1-2-3-3-1-2" data-name="subtitle: mean over 4 regimes x 8 seeds">mean over 4 regimes × 8 seeds</div>
+</div>
+<div class="mt-1.5 grid grid-cols-[320px_repeat(6,1fr)] items-center h-[28px] border-b border-[#10171D]/35 text-[10.5px] text-[#10171D]/65" data-kid="1-2-3-3-2" data-name="table header row">
+<div data-kid="1-2-3-3-2-1" data-name="header: Allocator">Allocator</div>
+<div class="text-right" data-kid="1-2-3-3-2-2" data-name="header: QoS % (right-aligned)">QoS %</div>
+<div class="text-right" data-kid="1-2-3-3-2-3" data-name="header: Goodput Mb/s (right-aligned)">Goodput Mb/s</div>
+<div class="text-right" data-kid="1-2-3-3-2-4" data-name="header: Deadline misses % (right-aligned)">Deadline misses %</div>
+<div class="text-right" data-kid="1-2-3-3-2-5" data-name="header: Collisions % (right-aligned)">Collisions %</div>
+<div class="text-right" data-kid="1-2-3-3-2-6" data-name="header: Wasted vacancy % (right-aligned)">Wasted vacancy %</div>
+<div class="text-right" data-kid="1-2-3-3-2-7" data-name="header: Jain fairness (right-aligned)">Jain fairness</div>
+</div>
+<div class="grid grid-cols-[320px_repeat(6,1fr)] items-center h-[35px] border-b border-[#10171D]/12 text-[14px]" data-kid="1-2-3-3-3" data-name="table row: M-LWDF">
+<div class="text-[14px] font-medium" data-kid="1-2-3-3-3-1" data-name="row label: M-LWDF">M-LWDF</div>
+<div class="text-right" data-kid="1-2-3-3-3-2" data-name="QoS value: 45.742">45.742</div>
+<div class="text-right" data-kid="1-2-3-3-3-3" data-name="Goodput value: 159.466">159.466</div>
+<div class="text-right" data-kid="1-2-3-3-3-4" data-name="Deadline misses value: 12.861">12.861</div>
+<div class="text-right" data-kid="1-2-3-3-3-5" data-name="Collisions value: 6.817">6.817</div>
+<div class="text-right" data-kid="1-2-3-3-3-6" data-name="Wasted vacancy value: 22.792">22.792</div>
+<div class="text-right" data-kid="1-2-3-3-3-7" data-name="Jain fairness value: 0.662">0.662</div>
+</div>
+<div class="grid grid-cols-[320px_repeat(6,1fr)] items-center h-[35px] border-b border-[#10171D]/12 text-[14px]" data-kid="1-2-3-3-4" data-name="table row (highlighted): M-LWDF + learned sensing=false">
+<div class="flex items-baseline gap-2" data-kid="1-2-3-3-4-1" data-name="highlighted row label container">
+<span class="whitespace-nowrap text-[14px] font-semibold" data-kid="1-2-3-3-4-1-1" data-name="row label: M-LWDF + learned sensing (bold)">M-LWDF + learned sensing</span>
+<span class="whitespace-nowrap text-[10px] font-normal text-[#10171D]/60" data-kid="1-2-3-3-4-1-2" data-name="badge: strongest overall">strongest overall</span>
+</div>
+<div class="text-right font-semibold" data-kid="1-2-3-3-4-2" data-name="QoS value: 49.520 (bold)">49.520</div>
+<div class="text-right font-semibold" data-kid="1-2-3-3-4-3" data-name="Goodput value: 171.896 (bold)">171.896</div>
+<div class="text-right font-semibold" data-kid="1-2-3-3-4-4" data-name="Deadline misses value: 11.811 (bold)">11.811</div>
+<div class="text-right font-semibold" data-kid="1-2-3-3-4-5" data-name="Collisions value: 2.107 (bold)">2.107</div>
+<div class="text-right font-semibold" data-kid="1-2-3-3-4-6" data-name="Wasted vacancy value: 15.567 (bold)">15.567</div>
+<div class="text-right font-semibold" data-kid="1-2-3-3-4-7" data-name="Jain fairness value: 0.651 (bold)">0.651</div>
+</div>
+<div class="grid grid-cols-[320px_repeat(6,1fr)] items-center h-[35px] border-b border-[#10171D]/12 text-[14px]" data-kid="1-2-3-3-5" data-name="table row: NeuroSpectrum">
+<div class="text-[14px] font-medium" data-kid="1-2-3-3-5-1" data-name="row label: NeuroSpectrum">NeuroSpectrum, hard sensing</div>
+<div class="text-right" data-kid="1-2-3-3-5-2" data-name="QoS value: 43.115">43.115</div>
+<div class="text-right" data-kid="1-2-3-3-5-3" data-name="Goodput value: 156.635">156.635</div>
+<div class="text-right" data-kid="1-2-3-3-5-4" data-name="Deadline misses value: 12.600">12.600</div>
+<div class="text-right" data-kid="1-2-3-3-5-5" data-name="Collisions value: 7.604">7.604</div>
+<div class="text-right" data-kid="1-2-3-3-5-6" data-name="Wasted vacancy value: 23.399">23.399</div>
+<div class="text-right" data-kid="1-2-3-3-5-7" data-name="Jain fairness value: 0.658">0.658</div>
+</div>
+<div class="grid grid-cols-[320px_repeat(6,1fr)] items-center h-[35px] border-b border-[#10171D]/12 text-[14px]" data-kid="1-2-3-3-6" data-name="table row: NeuroSpectrum">
+<div class="text-[14px] font-medium" data-kid="1-2-3-3-6-1" data-name="row label: NeuroSpectrum">NeuroSpectrum, BC only (no RL)</div>
+<div class="text-right" data-kid="1-2-3-3-6-2" data-name="QoS value: 47.486">47.486</div>
+<div class="text-right" data-kid="1-2-3-3-6-3" data-name="Goodput value: 168.176">168.176</div>
+<div class="text-right" data-kid="1-2-3-3-6-4" data-name="Deadline misses value: 12.366">12.366</div>
+<div class="text-right" data-kid="1-2-3-3-6-5" data-name="Collisions value: 2.430">2.430</div>
+<div class="text-right" data-kid="1-2-3-3-6-6" data-name="Wasted vacancy value: 17.910">17.910</div>
+<div class="text-right" data-kid="1-2-3-3-6-7" data-name="Jain fairness value: 0.648">0.648</div>
+</div>
+<div class="grid grid-cols-[320px_repeat(6,1fr)] items-center h-[35px] border-b border-[#10171D]/12 text-[14px]" data-kid="1-2-3-3-7" data-name="table row: NeuroSpectrum (proposed)">
+<div class="text-[14px] font-medium" data-kid="1-2-3-3-7-1" data-name="row label: NeuroSpectrum (proposed)">NeuroSpectrum (proposed)</div>
+<div class="text-right" data-kid="1-2-3-3-7-2" data-name="QoS value: 47.344">47.344</div>
+<div class="text-right" data-kid="1-2-3-3-7-3" data-name="Goodput value: 171.905">171.905</div>
+<div class="text-right" data-kid="1-2-3-3-7-4" data-name="Deadline misses value: 11.944">11.944</div>
+<div class="text-right" data-kid="1-2-3-3-7-5" data-name="Collisions value: 2.998">2.998</div>
+<div class="text-right" data-kid="1-2-3-3-7-6" data-name="Wasted vacancy value: 14.927">14.927</div>
+<div class="text-right" data-kid="1-2-3-3-7-7" data-name="Jain fairness value: 0.655">0.655</div>
+</div>
+</section>
+<!-- SELECTED REGIME STRIP 148 -->
+<section class="h-[148px] shrink-0 rounded-[14px] border border-[#10171D]/20 bg-white px-4 py-2.5" data-kid="1-2-3-4" data-name="selected regime detail section (high regime)">
+<div class="flex h-[20px] items-center justify-between" data-kid="1-2-3-4-1" data-name="detail section header row">
+<div class="flex items-baseline gap-2" data-kid="1-2-3-4-1-1" data-name="regime title container">
+<span class="text-[13px] font-semibold" data-kid="1-2-3-4-1-1-1" data-name="regime title: Selected regime: high">Selected regime: high</span>
+<span class="text-[11px] text-[#10171D]/60" data-kid="1-2-3-4-1-1-2" data-name="regime parameters summary">55 UEs, load ×1.60, duty 34%, 8 seeds</span>
+</div>
+<div class="text-[11px] underline decoration-[#10171D]/35 underline-offset-2" data-kid="1-2-3-4-1-2" data-name="link to all nine metrics">All nine metrics</div>
+</div>
+<div class="mt-1 grid grid-cols-[150px_270px_326px_74px_84px] items-center h-[16px] border-b border-[#10171D]/20 text-[10px] text-[#10171D]/65" data-kid="1-2-3-4-2" data-name="comparison table header row">
+<div data-kid="1-2-3-4-2-1" data-name="header: Metric">Metric</div>
+<div data-kid="1-2-3-4-2-2" data-name="header: Proposed">Proposed, mean [95% CI]</div>
+<div data-kid="1-2-3-4-2-3" data-name="header: Best classical">Best classical, mean [95% CI]</div>
+<div class="text-right" data-dynamic="true" data-kid="1-2-3-4-2-4" data-name="header: Δ" data-reason="false">Δ, + better</div>
+<div class="text-right" data-kid="1-2-3-4-2-5" data-name="header: p (right-aligned)">p</div>
+</div>
+<!-- QoS -->
+<div class="grid grid-cols-[150px_270px_326px_74px_84px] items-center h-[30px] border-b border-[#10171D]/10" data-kid="1-2-3-4-3" data-name="comparison row: QoS satisfaction">
+<div class="text-[12px] font-medium" data-kid="1-2-3-4-3-1" data-name="metric name: QoS satisfaction">QoS satisfaction</div>
+<div class="flex items-center gap-2 pr-3" data-kid="1-2-3-4-3-2" data-name="proposed QoS value with CI error bar">
+<span class="w-[44px] text-[12px] font-semibold text-right" data-kid="1-2-3-4-3-2-1" data-name="proposed value: 26.364 (bold)">26.364</span>
+<div class="relative h-[14px] flex-1" data-kid="1-2-3-4-3-2-2" data-name="Certainty plot (proposed QoS)">
+<span class="absolute left-0 right-0 top-1/2 h-px bg-[#10171D]/25" data-kid="1-2-3-4-3-2-2-1" data-name="baseline reference line"></span>
+<span class="absolute top-1/2 h-[2px] bg-[#10171D]/55" data-kid="1-2-3-4-3-2-2-2" data-name="CI horizontal bar" style="left:12.5%;right:29.2%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/70" data-kid="1-2-3-4-3-2-2-3" data-name="CI left whisker tick" style="left:12.5%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/70" data-kid="1-2-3-4-3-2-2-4" data-name="CI right whisker tick" style="right:29.2%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[5px] w-[5px] rounded-full bg-[#10171D]" data-kid="1-2-3-4-3-2-2-5" data-name="point-estimate circle marker" style="left:44.7%;"></span>
+</div>
+</div>
+<div class="flex items-center gap-2 pr-3" data-kid="1-2-3-4-3-3" data-name="best classical QoS value with CI error bar">
+<span class="w-[104px] whitespace-nowrap text-[10px] leading-[12px] text-[#10171D]/60" data-kid="1-2-3-4-3-3-1" data-name="comparator name: Max-C/I">Max-C/I</span>
+<span class="w-[50px] text-[12px] text-right" data-kid="1-2-3-4-3-3-2" data-name="comparator value: 27.273">27.273</span>
+<div class="relative h-[14px] flex-1" data-kid="1-2-3-4-3-3-3" data-name="Certainty plot (comparator Max-C/I)">
+<span class="absolute left-0 right-0 top-1/2 h-px bg-[#10171D]/25" data-kid="1-2-3-4-3-3-3-1" data-name="baseline reference line"></span>
+<span class="absolute top-1/2 h-[2px] bg-[#10171D]/35" data-kid="1-2-3-4-3-3-3-2" data-name="CI horizontal bar" style="left:12.5%;right:10%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/50" data-kid="1-2-3-4-3-3-3-3" data-name="CI left whisker tick" style="left:12.5%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/50" data-kid="1-2-3-4-3-3-3-4" data-name="CI right whisker tick" style="right:10%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[5px] w-[5px] rounded-full bg-[#10171D]/60" data-kid="1-2-3-4-3-3-3-5" data-name="point-estimate circle marker" style="left:52.3%;"></span>
+</div>
+</div>
+<div class="text-right text-[12px]" data-kid="1-2-3-4-3-4" data-name="delta value: −3.3%">−3.3%</div>
+<div class="text-right text-[12px]" data-kid="1-2-3-4-3-5" data-name="p-value: 0.402 n.s.">0.402 <span class="text-[10px] text-[#10171D]/60" data-kid="1-2-3-4-3-5-1" data-name="non-significance label: n.s.">n.s.</span></div>
+</div>
+<!-- Goodput -->
+<div class="grid grid-cols-[150px_270px_326px_74px_84px] items-center h-[30px] border-b border-[#10171D]/10" data-kid="1-2-3-4-4" data-name="comparison row: Goodput">
+<div class="text-[12px] font-medium" data-kid="1-2-3-4-4-1" data-name="metric name: Goodput">Goodput</div>
+<div class="flex items-center gap-2 pr-3" data-kid="1-2-3-4-4-2" data-name="proposed goodput value with CI error bar">
+<span class="w-[44px] text-[12px] font-semibold text-right" data-kid="1-2-3-4-4-2-1" data-name="proposed value: 221.620 (bold)">221.620</span>
+<div class="relative h-[14px] flex-1" data-kid="1-2-3-4-4-2-2" data-name="Certainty plot (proposed goodput)">
+<span class="absolute left-0 right-0 top-1/2 h-px bg-[#10171D]/25" data-kid="1-2-3-4-4-2-2-1" data-name="baseline reference line"></span>
+<span class="absolute top-1/2 h-[2px] bg-[#10171D]/55" data-kid="1-2-3-4-4-2-2-2" data-name="CI horizontal bar" style="left:9%;right:61.2%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/70" data-kid="1-2-3-4-4-2-2-3" data-name="CI left whisker tick" style="left:9%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/70" data-kid="1-2-3-4-4-2-2-4" data-name="CI right whisker tick" style="right:61.2%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[5px] w-[5px] rounded-full bg-[#10171D]" data-kid="1-2-3-4-4-2-2-5" data-name="point-estimate circle marker" style="left:24.8%;"></span>
+</div>
+</div>
+<div class="flex items-center gap-2 pr-3" data-kid="1-2-3-4-4-3" data-name="best classical goodput value with CI error bar">
+<span class="w-[104px] whitespace-nowrap text-[10px] leading-[12px] text-[#10171D]/60" data-kid="1-2-3-4-4-3-1" data-name="comparator name: Max-C/I">Max-C/I</span>
+<span class="w-[50px] text-[12px] text-right" data-kid="1-2-3-4-4-3-2" data-name="comparator value: 259.593">259.593</span>
+<div class="relative h-[14px] flex-1" data-kid="1-2-3-4-4-3-3" data-name="Certainty plot (comparator Max-C/I)">
+<span class="absolute left-0 right-0 top-1/2 h-px bg-[#10171D]/25" data-kid="1-2-3-4-4-3-3-1" data-name="baseline reference line"></span>
+<span class="absolute top-1/2 h-[2px] bg-[#10171D]/35" data-kid="1-2-3-4-4-3-3-2" data-name="CI horizontal bar" style="left:67.2%;right:6%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/50" data-kid="1-2-3-4-4-3-3-3" data-name="CI left whisker tick" style="left:67.2%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/50" data-kid="1-2-3-4-4-3-3-4" data-name="CI right whisker tick" style="right:6%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[5px] w-[5px] rounded-full bg-[#10171D]/60" data-kid="1-2-3-4-4-3-3-5" data-name="point-estimate circle marker" style="left:81.5%;"></span>
+</div>
+</div>
+<div class="text-right text-[12px]" data-kid="1-2-3-4-4-4" data-name="delta value: −14.6%">−14.6%</div>
+<div class="text-right text-[12px]" data-kid="1-2-3-4-4-5" data-name="p-value: 0.0117">0.0117 <span class="text-[10px] font-semibold" data-kid="1-2-3-4-4-5-1" data-name="significance asterisk (bold)">*</span></div>
+</div>
+<!-- Collisions -->
+<div class="grid grid-cols-[150px_270px_326px_74px_84px] items-center h-[30px]" data-kid="1-2-3-4-5" data-name="comparison row: Incumbent collisions">
+<div class="text-[12px] font-medium" data-kid="1-2-3-4-5-1" data-name="metric name: Incumbent collisions">Incumbent collisions</div>
+<div class="flex items-center gap-2 pr-3" data-kid="1-2-3-4-5-2" data-name="proposed collisions value with CI error bar">
+<span class="w-[44px] text-[12px] font-semibold text-right" data-kid="1-2-3-4-5-2-1" data-name="proposed value: 4.240 (bold)">4.240</span>
+<div class="relative h-[14px] flex-1" data-kid="1-2-3-4-5-2-2" data-name="Certainty plot (proposed collisions)">
+<span class="absolute left-0 right-0 top-1/2 h-px bg-[#10171D]/25" data-kid="1-2-3-4-5-2-2-1" data-name="baseline reference line"></span>
+<span class="absolute top-1/2 h-[2px] bg-[#10171D]/55" data-kid="1-2-3-4-5-2-2-2" data-name="CI horizontal bar" style="left:4.2%;right:71%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/70" data-kid="1-2-3-4-5-2-2-3" data-name="CI left whisker tick" style="left:4.2%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/70" data-kid="1-2-3-4-5-2-2-4" data-name="CI right whisker tick" style="right:71%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[5px] w-[5px] rounded-full bg-[#10171D]" data-kid="1-2-3-4-5-2-2-5" data-name="point-estimate circle marker" style="left:16.2%;"></span>
+</div>
+</div>
+<div class="flex items-center gap-2 pr-3" data-kid="1-2-3-4-5-3" data-name="best classical collisions value with CI error bar">
+<span class="w-[104px] whitespace-nowrap text-[10px] leading-[12px] text-[#10171D]/60" data-kid="1-2-3-4-5-3-1" data-name="comparator name: Proportional Fair">Proportional Fair</span>
+<span class="w-[50px] text-[12px] text-right" data-kid="1-2-3-4-5-3-2" data-name="comparator value: 7.578">7.578</span>
+<div class="relative h-[14px] flex-1" data-kid="1-2-3-4-5-3-3" data-name="Certainty plot (comparator Proportional Fair)">
+<span class="absolute left-0 right-0 top-1/2 h-px bg-[#10171D]/25" data-kid="1-2-3-4-5-3-3-1" data-name="baseline reference line"></span>
+<span class="absolute top-1/2 h-[2px] bg-[#10171D]/35" data-kid="1-2-3-4-5-3-3-2" data-name="CI horizontal bar" style="left:62.7%;right:3.3%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/50" data-kid="1-2-3-4-5-3-3-3" data-name="CI left whisker tick" style="left:62.7%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[8px] w-px bg-[#10171D]/50" data-kid="1-2-3-4-5-3-3-4" data-name="CI right whisker tick" style="right:3.3%;"></span>
+<span class="absolute top-1/2 -translate-y-1/2 h-[5px] w-[5px] rounded-full bg-[#10171D]/60" data-kid="1-2-3-4-5-3-3-5" data-name="point-estimate circle marker" style="left:80.3%;"></span>
+</div>
+</div>
+<div class="text-right text-[12px] font-semibold" data-kid="1-2-3-4-5-4" data-name="delta value: +44.1% (bold)">+44.1%</div>
+<div class="text-right text-[12px]" data-kid="1-2-3-4-5-5" data-name="p-value: 0.0117">0.0117 <span class="text-[10px]" data-kid="1-2-3-4-5-5-1" data-name="significance asterisk">*</span></div>
+</div>
+</section>
+<!-- ACTIONS 40 -->
+<div class="h-[40px] shrink-0 flex items-center gap-2" data-kid="1-2-3-5" data-name="actions toolbar">
+<div class="flex h-[32px] items-center rounded-[14px] border border-[#10171D]/25 px-3 text-[12px] font-medium" data-kid="1-2-3-5-1" data-name="action button: QoS by class (outline)">QoS by class</div>
+<div class="flex h-[32px] items-center rounded-[14px] border border-[#10171D]/25 px-3 text-[12px] font-medium text-[#10171D]/80" data-kid="1-2-3-5-2" data-name="action button: Predictor comparison (outline dimmed)">Predictor comparison</div>
+<div class="flex-1" data-kid="1-2-3-5-3" data-name="flex spacer"></div>
+<div class="flex h-[32px] items-center rounded-[14px] bg-[#10171D] px-3.5 text-[12px] font-medium text-[#EBE9E9]" data-kid="1-2-3-5-4" data-name="primary call-to-action button: Run paired episode">Run paired episode</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
